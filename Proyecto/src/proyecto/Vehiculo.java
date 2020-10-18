@@ -10,24 +10,24 @@ package proyecto;
  * @author Lukas
  */
 public class Vehiculo {
+
     private String patente;
     private String Marca;
     private String modelo;
-    private Persona dueño;
-    
-    //contructores
+    private Persona propietario;
 
+    //contructores
     public Vehiculo() {
     }
 
-    public Vehiculo(String patente, String Marca, String modelo, Persona dueño) {
+    public Vehiculo(String patente, String Marca, String modelo, Persona propietario) {
         this.patente = patente;
         this.Marca = Marca;
         this.modelo = modelo;
-        this.dueño = dueño;
+        this.propietario = propietario;
     }
-    //getters y setters 
 
+    //getters y setters 
     public String getPatente() {
         return patente;
     }
@@ -52,14 +52,13 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public Persona getDueño() {
-        return dueño;
+    public Persona getPropietario() {
+        return propietario;
     }
 
-    public void setDueño(Persona dueño) {
-        this.dueño = dueño;
+    public void setPropietario(Persona propietario) {
+        this.propietario = propietario;
     }
-  //customers
-    
-    
+
+    //customers
 }
