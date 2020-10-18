@@ -14,7 +14,6 @@ public class Persona {
     private String nombre;
     private int codigo;
     private Boleta boleta;
-
     public Persona() {
     }
 
