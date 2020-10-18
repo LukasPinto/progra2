@@ -10,5 +10,9 @@ package proyecto;
  * @author Raigou
  */
 public class Persona {
+    //atributos
+    private String nombre;
+    private String codigo;
+    
     
 }
