@@ -4,8 +4,10 @@ package proyecto;
 public class Estacionamiento {
     
     private int numEstacionamiento;
-    private String seccion;
+    private String seccion;//puesto donde está estacionado
     private Vehiculo vehiculo;
+    private boolean estado;//ocupado o desocupado
+    
 
     // getters
     public int getNumEstacionamiento() {
