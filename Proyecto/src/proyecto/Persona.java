@@ -12,13 +12,13 @@ package proyecto;
 public class Persona {
     //atributos
     private String nombre;
-    private String codigo;
+    private int codigo;
     private Boleta boleta;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String codigo, Boleta boleta) {
+    public Persona(String nombre, int codigo, Boleta boleta) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.boleta = boleta;
@@ -32,11 +32,11 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
