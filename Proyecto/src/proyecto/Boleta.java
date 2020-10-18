@@ -4,21 +4,23 @@
  * and open the template in the editor.
  */
 package proyecto;
+
 import java.util.Date;
+
 /**
  *
  * @author Lukas
  */
 public class Boleta {
+
     private Date horaEntrada;
     private Date horaSalida;
     private int total;
-   private int codigo;
-   private int descuento;
-  private boolean estado;
-  
-  //constructores
+    private int codigo;
+    private int descuento;
+    private boolean estado;
 
+    //constructores
     public Boleta() {
     }
 
@@ -78,5 +80,19 @@ public class Boleta {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-   
+    //customers
+
+    public void calculoPrecio() {
+
+    }
+
+    public void calculoDescuento() {
+
+    }
+
+    public void registrarEntrada() {
+    }
+
+    public void registrarSalida() {
+    }
 }
