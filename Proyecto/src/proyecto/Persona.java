@@ -13,7 +13,16 @@ public class Persona {
     //atributos
     private String nombre;
     private String codigo;
-    private Vehiculo vehiculo;
+    private Boleta boleta;
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String codigo, Boleta boleta) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.boleta = boleta;
+    }
 
     public String getNombre() {
         return nombre;
@@ -31,21 +40,14 @@ public class Persona {
         this.codigo = codigo;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public Boleta getBoleta() {
+        return boleta;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setBoleta(Boleta boleta) {
+        this.boleta = boleta;
     }
 
-    public Persona(String nombre, String codigo, Vehiculo vehiculo) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.vehiculo = vehiculo;
-    }
+    
 
-    public Persona() {
-        
-    }  
 }
