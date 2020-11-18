@@ -63,6 +63,7 @@ public abstract class Vehiculo implements Caja{
     public String toString() {
         return "Vehiculo{" + "patente=" + patente + ", Marca=" + Marca + ", modelo=" + modelo + ", trabajador=" + trabajador + '}';
     }
+    
     public abstract int calcularPrecio();
 
     

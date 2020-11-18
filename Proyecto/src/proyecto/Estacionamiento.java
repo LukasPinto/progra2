@@ -8,7 +8,9 @@ public class Estacionamiento {
     private Vehiculo vehiculo;
     private boolean estado;//ocupado o desocupado
     
-
+    public Estacionamiento(){
+    }
+    
     // getters
     public int getNumEstacionamiento() {
         return numEstacionamiento;
@@ -36,10 +38,6 @@ public class Estacionamiento {
     }
     
     
-    
-    public Estacionamiento(){
-        
-    }
     
     
 }
