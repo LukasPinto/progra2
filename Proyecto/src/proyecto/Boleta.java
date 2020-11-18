@@ -20,19 +20,23 @@ public class Boleta {
     private int codigo;
     private int descuento;
     private boolean estado;
+    private int fila;
+    private int columna;//fila y columna son el lugar de estacionamiento
     /*private Vehiculo vehiculo*/;
 
     //constructores
     public Boleta() {
     }
 
-    public Boleta(Date horaEntrada, Date horaSalida, int total, int codigo, int descuento, boolean estado) {
+    public Boleta(Date horaEntrada, Date horaSalida, int total, int codigo, int descuento, boolean estado, int fila, int columna) {
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
         this.total = total;
         this.codigo = codigo;
         this.descuento = descuento;
         this.estado = estado;
+        this.fila = fila;
+        this.columna = columna;
     }
 
     public Date getHoraEntrada() {
@@ -82,19 +86,23 @@ public class Boleta {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    //customers
 
-    public void calculoPrecio() {
-
+    public int getFila() {
+        return fila;
     }
 
-    public void calculoDescuento() {
-
+    public void setFila(int fila) {
+        this.fila = fila;
     }
 
-    public void registrarEntrada() {
+    public int getColumna() {
+        return columna;
     }
 
-    public void registrarSalida() {
+    public void setColumna(int columna) {
+        this.columna = columna;
     }
+
+    
+    
 }
