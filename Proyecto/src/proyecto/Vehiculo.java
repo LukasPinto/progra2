@@ -9,7 +9,7 @@ package proyecto;
  *
  * @author Lukas
  */
-public class Vehiculo {
+public abstract class Vehiculo implements Caja{
 
     private String patente;
     private String Marca;
@@ -23,7 +23,6 @@ public class Vehiculo {
         this.patente = patente;
         this.Marca = Marca;
         this.modelo = modelo;
-
     }
 
     //getters y setters 
@@ -51,6 +50,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "patente=" + patente + ", Marca=" + Marca + ", modelo=" + modelo + '}';
+    }
 
-    //customers
+
+    
 }
