@@ -11,11 +11,12 @@ package proyecto;
  */
 public class Proyecto {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
+        
+        
+        
     }
-    
+
 }
