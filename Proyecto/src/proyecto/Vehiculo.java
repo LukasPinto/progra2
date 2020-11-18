@@ -14,17 +14,16 @@ public class Vehiculo {
     private String patente;
     private String Marca;
     private String modelo;
-    private Persona propietario;
 
     //contructores
     public Vehiculo() {
     }
 
-    public Vehiculo(String patente, String Marca, String modelo, Persona propietario) {
+    public Vehiculo(String patente, String Marca, String modelo) {
         this.patente = patente;
         this.Marca = Marca;
         this.modelo = modelo;
-        this.propietario = propietario;
+
     }
 
     //getters y setters 
@@ -52,13 +51,6 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public Persona getPropietario() {
-        return propietario;
-    }
-
-    public void setPropietario(Persona propietario) {
-        this.propietario = propietario;
-    }
 
     //customers
 }
