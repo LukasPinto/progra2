@@ -11,21 +11,22 @@ package proyecto;
  */
 public abstract class Vehiculo implements Caja{
 
-    private String patente;
-    private String Marca;
-    private String modelo;
+    protected String patente;
+    protected String Marca;
+    protected String modelo;
+    protected boolean trabajador;//si es un vehiculo de un trabajador no se le cobra
 
     //contructores
     public Vehiculo() {
     }
 
-    public Vehiculo(String patente, String Marca, String modelo) {
+    public Vehiculo(String patente, String Marca, String modelo, boolean trabajador) {
         this.patente = patente;
         this.Marca = Marca;
         this.modelo = modelo;
+        this.trabajador = trabajador;
     }
 
-    //getters y setters 
     public String getPatente() {
         return patente;
     }
@@ -50,11 +51,19 @@ public abstract class Vehiculo implements Caja{
         this.modelo = modelo;
     }
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" + "patente=" + patente + ", Marca=" + Marca + ", modelo=" + modelo + '}';
+    public boolean isTrabajador() {
+        return trabajador;
     }
 
+    public void setTrabajador(boolean trabajador) {
+        this.trabajador = trabajador;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "patente=" + patente + ", Marca=" + Marca + ", modelo=" + modelo + ", trabajador=" + trabajador + '}';
+    }
+    public abstract int calcularPrecio();
 
     
 }
