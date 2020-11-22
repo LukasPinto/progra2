@@ -6,7 +6,10 @@
 package proyecto;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -88,8 +91,17 @@ public class RegistroEstacionamiento {
     public boolean disponibilidadMoto(){
         return listaMotos.size() < Caja.LIMITE_MOTOS;
     }
+    public Calendar getCalendar(Date date) {
+        Calendar cal = Calendar.getInstance(Locale.US);
+        cal.setTime(date);
+        return cal;
+    }
+
     public void generarBoleta(Vehiculo vehiculo){// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
-     vehiculo.get
+         Calendar a = getCalendar(vehiculo.getHoraIngreso());
+        Calendar b = getCalendar(vehiculo.getHoraSalida());
+        int diff = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
+        System.out.println(diff);
     }
     
 }
