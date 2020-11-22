@@ -17,6 +17,7 @@ public class RegistroEstacionamiento {
     private final List<Camion> listaCamiones;
     private final List<Vehiculo> listaAutosCamionetas;
     private final List<Moto> listaMotos;
+    private Vehiculo vehiculo;
 
     public RegistroEstacionamiento() {
         this.listaCamiones = new ArrayList<>();
@@ -62,15 +63,30 @@ public class RegistroEstacionamiento {
     public boolean ingresarMoto(Moto moto) {
         return this.listaMotos.add(moto);
     }
-    public boolean retirarAutoCamioneta(Vehiculo vehiculo){
+
+    public boolean retirarAutoCamioneta(Vehiculo vehiculo) {
         return this.listaAutosCamionetas.remove(vehiculo);
     }
-    public boolean retirarCamion(Camion camion){
+
+    public boolean retirarCamion(Camion camion) {
         return this.listaCamiones.remove(camion);
     }
-    public boolean retirarMoto(Moto moto){
+
+    public boolean retirarMoto(Moto moto) {
         return this.listaMotos.remove(moto);
     }
-    
 
+    public boolean disponibilidadVehiculos() {
+        // true si hay disponibilidad
+        //falso si no hay disponibilidad
+        return listaAutosCamionetas.size() < Caja.LIMITE_AUTOS_CAMIONETAS;
+
+    }
+    public boolean disponibilidadCamion(){
+        return listaCamiones.size() < Caja.VALOR_HORA_CAMION;
+    }
+    public boolean disponibilidadMoto(){
+        return listaMotos.size() < Caja.VALOR_HORA_MOTO;
+    }
+    
 }
