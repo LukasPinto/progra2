@@ -83,10 +83,10 @@ public class RegistroEstacionamiento {
 
     }
     public boolean disponibilidadCamion(){
-        return listaCamiones.size() < Caja.VALOR_HORA_CAMION;
+        return listaCamiones.size() < Caja.LIMITE_CAMIONES;
     }
     public boolean disponibilidadMoto(){
-        return listaMotos.size() < Caja.VALOR_HORA_MOTO;
+        return listaMotos.size() < Caja.LIMITE_MOTOS;
     }
     
 }
