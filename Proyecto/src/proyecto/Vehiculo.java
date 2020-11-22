@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import java.util.Date;
+
 /**
  *
  * @author Lukas
@@ -15,6 +17,8 @@ public abstract class Vehiculo implements Caja{
     protected String Marca;
     protected String modelo;
     protected boolean trabajador;//si es un vehiculo de un trabajador no se le cobra
+    protected Date horaIngreso;
+    protected Date horaSalida;
 
     //contructores
     public Vehiculo() {
@@ -25,7 +29,11 @@ public abstract class Vehiculo implements Caja{
         this.Marca = Marca;
         this.modelo = modelo;
         this.trabajador = trabajador;
+        this.horaIngreso = new Date();
+        this.horaSalida = null;
     }
+
+   
 
     public String getPatente() {
         return patente;
@@ -58,6 +66,23 @@ public abstract class Vehiculo implements Caja{
     public void setTrabajador(boolean trabajador) {
         this.trabajador = trabajador;
     }
+
+    public Date getHoraIngreso() {
+        return horaIngreso;
+    }
+
+    public void setHoraIngreso(Date horaIngreso) {
+        this.horaIngreso = horaIngreso;
+    }
+
+    public Date getHoraSalida() {
+        return horaSalida;
+    }
+
+    public void setHoraSalida(Date horaSalida) {
+        this.horaSalida = horaSalida;
+    }
+    
 
     @Override
     public String toString() {

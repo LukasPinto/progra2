@@ -88,5 +88,8 @@ public class RegistroEstacionamiento {
     public boolean disponibilidadMoto(){
         return listaMotos.size() < Caja.LIMITE_MOTOS;
     }
+    public void generarBoleta(Vehiculo vehiculo){// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+     vehiculo.get
+    }
     
 }
