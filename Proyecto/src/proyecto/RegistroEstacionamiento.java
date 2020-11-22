@@ -11,29 +11,11 @@ import java.util.List;
  * @author Benjamin
  */
 public class RegistroEstacionamiento {
-    private List<Estacionamiento> listaEstacionamiento;
-    // constructor
-    public RegistroEstacionamiento() {
-        listaEstacionamiento = new ArrayList<>();
-    }
-    // se añaden productos a la lista
-    public boolean agregarVehiculo(Estacionamiento autoNuevo) {
-        return listaEstacionamiento.add(autoNuevo);
-    }
+    private List<Vehiculo> listaCamiones;
+    private List<Vehiculo> listaAutosCamionetas;
+    private List<Vehiculo> listaMotos;
     
-    public boolean validarVehiculo(String patente) {
-        for (Estacionamiento vehiculo : listaEstacionamiento) {
-            if (vehiculo.getPatente() == patente) {
-                return true;
-            }
-        }
-        return false;
-    }
-    public void listarVehiculos() {
-        for (Estacionamiento vehiculo : listaEstacionamiento) {
-            System.out.println(vehiculo.toString());
-        }
-    }
+   
     
     
     
