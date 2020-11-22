@@ -11,9 +11,31 @@ import java.util.List;
  * @author Benjamin
  */
 public class RegistroEstacionamiento {
-    private List<Vehiculo> listaCamiones;
-    private List<Vehiculo> listaAutosCamionetas;
-    private List<Vehiculo> listaMotos;
+    private final List<Camion> listaCamiones;
+    private final List<Vehiculo> listaAutosCamionetas;
+    private final List<Moto> listaMotos;
+
+   
+
+    public RegistroEstacionamiento() {
+        this.listaCamiones=new ArrayList<>();
+        this.listaAutosCamionetas=new ArrayList<>();
+        this.listaMotos=new ArrayList<>();
+    }
+
+    public boolean ingresarAutoCamioneta(Vehiculo vehiculo){
+        return this.listaAutosCamionetas.add(vehiculo);
+    }
+    
+    public boolean ingresarCamion(Camion camion){
+        return this.listaCamiones.add(camion);
+    }
+    public boolean ingresarMoto(Moto moto){
+        return this.listaMotos.add(moto);
+    }
+    
+    
+    
     
    
     

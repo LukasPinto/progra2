@@ -16,6 +16,9 @@ public interface Caja {
     int VALOR_HORA_CAMIONETA=2100;
     int VALOR_HORA_MOTO=1500;
     int VALOR_HORA_CAMION=3000;
+    int LIMITE_AUTOS_CAMIONETAS=250;
+    int LIMITE_MOTOS=100;
+    int LIMITE_CAMIONES=50;
     
     int calcularDescuento();
     public int obtenerIVA();
