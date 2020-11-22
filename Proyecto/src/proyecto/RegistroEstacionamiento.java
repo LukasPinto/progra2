@@ -100,8 +100,10 @@ public class RegistroEstacionamiento {
     public void generarBoleta(Vehiculo vehiculo){// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
          Calendar a = getCalendar(vehiculo.getHoraIngreso());
         Calendar b = getCalendar(vehiculo.getHoraSalida());
-        int diff = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
-        System.out.println(diff);
+        //System.out.println(a.toString()+"  "+b.toString());
+        int diff_horas = a.get(Calendar.HOUR_OF_DAY) - b.get(Calendar.HOUR_OF_DAY);
+        int diff_minutos = a.get(Calendar.MINUTE) - b.get(Calendar.MINUTE);
+        System.out.println(diff_horas+"    "+diff_minutos);
     }
     
 }
