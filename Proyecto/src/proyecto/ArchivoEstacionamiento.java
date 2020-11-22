@@ -15,51 +15,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Benjamin
  */
-public class ArchivoEstacionamiento {
-    
-    BufferedReader fin = null;
-        BufferedWriter fout = null;
-        String cadena;
+public class ArchivoEstacionamiento{
 
-        try {
-            //obtener la ruta del archivo
-            //File directory = new File("./");
-            //System.out.println(directory.getAbsolutePath());
-            fin = new BufferedReader(new FileReader("/Users/yaravi/Downloads/pruebaArchivos/hola.txt"));
-            fout = new BufferedWriter(new FileWriter("/Users/yaravi/Downloads/pruebaArchivos/salida.txt"));
-            while ((cadena = fin.readLine()) != null) {
-                fout.write(cadena);
-                //System.out.println(cadena);
-            }
-        } finally {
-            if (fin != null) {
-                fin.close();
-            }
-            if (fout != null) {
-                fout.close();
-            }
-        }
-        
-        String cadena;
-        
-        BufferedReader fin = new BufferedReader(new FileReader("/Users/yaravi/Downloads/pruebaArchivos/hola.txt"));
-        Scanner s = new Scanner(fin);
+    FileWriter escribir;
+    PrintWriter imprimir;
 
-        PrintWriter writer = new PrintWriter(new FileOutputStream(
-                new File("/Users/yaravi/Downloads/pruebaArchivos/salida.txt"), true));
-        /* modo append = true */
-    
+    File archivo = new File("Estacionamiento.txt");
 
-        while ((cadena = fin.readLine()) != null) {
-            writer.println(cadena);
-            //System.out.println(cadena);
-        }
-        s.close();
-        writer.close()
-    
-    
+
+
 }
