@@ -4,41 +4,73 @@
  * and open the template in the editor.
  */
 package proyecto;
+
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Benjamin
  */
 public class RegistroEstacionamiento {
+
     private final List<Camion> listaCamiones;
     private final List<Vehiculo> listaAutosCamionetas;
     private final List<Moto> listaMotos;
 
-   
-
     public RegistroEstacionamiento() {
-        this.listaCamiones=new ArrayList<>();
-        this.listaAutosCamionetas=new ArrayList<>();
-        this.listaMotos=new ArrayList<>();
+        this.listaCamiones = new ArrayList<>();
+        this.listaAutosCamionetas = new ArrayList<>();
+        this.listaMotos = new ArrayList<>();
     }
 
-    public boolean ingresarAutoCamioneta(Vehiculo vehiculo){
+    public boolean validarAutoCamioneta(Vehiculo vehiculo) {
+        for (Vehiculo listaAutosCamioneta : listaAutosCamionetas) {
+            if (listaAutosCamioneta.patente.equals(vehiculo.patente)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean validarMoto(Moto moto) {
+        for (Moto listaMoto : listaMotos) {
+            if (listaMoto.patente.equals(moto.patente)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean validarCamion(Camion camion) {
+        for (Camion listaCamion : listaCamiones) {
+            if (listaCamion.patente.equals(camion.patente)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean ingresarAutoCamioneta(Vehiculo vehiculo) {
         return this.listaAutosCamionetas.add(vehiculo);
     }
-    
-    public boolean ingresarCamion(Camion camion){
+
+    public boolean ingresarCamion(Camion camion) {
         return this.listaCamiones.add(camion);
     }
-    public boolean ingresarMoto(Moto moto){
+
+    public boolean ingresarMoto(Moto moto) {
         return this.listaMotos.add(moto);
     }
+    public boolean retirarAutoCamioneta(Vehiculo vehiculo){
+        return this.listaAutosCamionetas.remove(vehiculo);
+    }
+    public boolean retirarCamion(Camion camion){
+        return this.listaCamiones.remove(camion);
+    }
+    public boolean retirarMoto(Moto moto){
+        return this.listaMotos.remove(moto);
+    }
     
-    
-    
-    
-   
-    
-    
-    
+
 }
