@@ -11,7 +11,7 @@ package proyecto;
  */
 public class Auto extends Vehiculo{
     private String tipoDeAuto;//sedan, deportivo, de lujo
-
+    
    
     public Auto() {
         super();
