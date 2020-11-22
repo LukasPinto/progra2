@@ -15,7 +15,7 @@ public class Proyecto {
     public static void main(String[] args) {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
         
-        Boleta[][] boleta= new Boleta[100][100];
+
         
     }
 
