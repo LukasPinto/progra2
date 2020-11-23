@@ -85,25 +85,29 @@ public class RegistroEstacionamiento {
         return listaAutosCamionetas.size() < Caja.LIMITE_AUTOS_CAMIONETAS;
 
     }
-    public boolean disponibilidadCamion(){
+
+    public boolean disponibilidadCamion() {
         return listaCamiones.size() < Caja.LIMITE_CAMIONES;
     }
-    public boolean disponibilidadMoto(){
+
+    public boolean disponibilidadMoto() {
         return listaMotos.size() < Caja.LIMITE_MOTOS;
     }
+
     public Calendar getCalendar(Date date) {
         Calendar cal = Calendar.getInstance(Locale.US);
         cal.setTime(date);
         return cal;
     }
 
-    public void generarBoleta(Vehiculo vehiculo){// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
-         Calendar a = getCalendar(vehiculo.getHoraIngreso());
+    public void generarBoleta(Vehiculo vehiculo) {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+        Calendar a = getCalendar(vehiculo.getHoraIngreso());
         Calendar b = getCalendar(vehiculo.getHoraSalida());
         //System.out.println(a.toString()+"  "+b.toString());
-        int diff_horas = a.get(Calendar.HOUR_OF_DAY) - b.get(Calendar.HOUR_OF_DAY);
-        int diff_minutos = a.get(Calendar.MINUTE) - b.get(Calendar.MINUTE);
-        System.out.println(diff_horas+"    "+diff_minutos);
+        int diff_horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+        int diff_minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+        int minutos_diff = diff_horas * 60 + diff_minutos;
+        System.out.println(diff_horas + "    " + diff_minutos + "   " + minutos_diff);
     }
-    
+
 }

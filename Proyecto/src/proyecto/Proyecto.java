@@ -13,17 +13,16 @@ import java.util.Date;
  */
 public class Proyecto {
 
-
     public static void main(String[] args) {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
-        
-        Auto auto=new Auto("Sedan", "acab-12", "Chevrolet" , "Corsa" , false);
-        auto.setHoraSalida(new Date(120, 5,3, 11, 53, 6));
-        System.out.println(auto.horaIngreso+"   "+ auto.horaSalida);
-        RegistroEstacionamiento r1=new RegistroEstacionamiento();
-       r1.ingresarAutoCamioneta(auto);
-       r1.generarBoleta(auto);
-        
+
+        Auto auto = new Auto("Sedan", "acab-12", "Chevrolet", "Corsa", false);
+        auto.setHoraSalida(new Date(120, 10, 22, 22, 55, 6));
+        System.out.println(auto.horaIngreso + "   " + auto.horaSalida);
+        RegistroEstacionamiento r1 = new RegistroEstacionamiento();
+        r1.ingresarAutoCamioneta(auto);
+        r1.generarBoleta(auto);
+
     }
 
 }
