@@ -36,17 +36,17 @@ public class Auto extends Vehiculo{
     }
 
     @Override
-    public int calcularDescuento() {
+    public int calcularDescuento(int cantHoras) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int obtenerIVA() {
+    public int obtenerIVA(int cantHoras) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int obtenerTotal() {
+    public int obtenerTotal(int cantHoras) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

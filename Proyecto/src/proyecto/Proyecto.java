@@ -21,7 +21,7 @@ public class Proyecto {
         System.out.println(auto.horaIngreso + "   " + auto.horaSalida);
         RegistroEstacionamiento r1 = new RegistroEstacionamiento();
         r1.ingresarAutoCamioneta(auto);
-        r1.generarBoleta(auto);
+        r1.generarBoletaAutoCamionetas(auto);
 
     }
 

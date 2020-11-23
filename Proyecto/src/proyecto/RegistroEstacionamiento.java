@@ -18,8 +18,11 @@ import java.util.Locale;
 public class RegistroEstacionamiento {
 
     private final List<Camion> listaCamiones;
+    private int cantBoletasCamiones;
     private final List<Vehiculo> listaAutosCamionetas;
+    private int cantBoletasAutosCamionetas;
     private final List<Moto> listaMotos;
+    private int cantBoletasMotos;
     private Vehiculo vehiculo;
 
     public RegistroEstacionamiento() {
@@ -100,7 +103,8 @@ public class RegistroEstacionamiento {
         return cal;
     }
 
-    public void generarBoleta(Vehiculo vehiculo) {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+    public void generarBoletaAutoCamionetas(Vehiculo vehiculo) {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+        int horasContabilizadas;
         Calendar a = getCalendar(vehiculo.getHoraIngreso());
         Calendar b = getCalendar(vehiculo.getHoraSalida());
         //System.out.println(a.toString()+"  "+b.toString());
@@ -108,6 +112,21 @@ public class RegistroEstacionamiento {
         int diff_minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
         int minutos_diff = diff_horas * 60 + diff_minutos;
         System.out.println(diff_horas + "    " + diff_minutos + "   " + minutos_diff);
+        minutos_diff=minutos_diff-10;// se descuentas los primeros 10 min gratis
+        System.out.println(minutos_diff);
+        horasContabilizadas= (int)(minutos_diff/60);// Se toman en cuenta las exactas que estuvo para el calculo
+        if(vehiculo instanceof Auto ){
+            
+        }
+        else{
+            
+        }
+        System.out.println("Patente: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).patente+" marca: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).Marca+" modelo"+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).modelo);
+        System.out.println("hora de entrada: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).horaIngreso);
+        System.out.println("hora de salida: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).horaSalida);
+        System.out.println("Tiempo de estadia: "+diff_horas+"h "+diff_minutos+"m");
+        
+        
     }
 
 }
