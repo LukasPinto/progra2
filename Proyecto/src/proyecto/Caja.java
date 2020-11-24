@@ -11,7 +11,7 @@ package proyecto;
 public interface Caja {
 
     public static final double IVA= 0.19;
-    double DESC_MIN=0.05;//por cada media hora se hace el descuento
+    double DESC_MIN=0.02;//por cada media hora se hace el descuento
     int VALOR_HORA_AUTO=2000;
     int VALOR_HORA_CAMIONETA=2100;
     int VALOR_HORA_MOTO=1500;
