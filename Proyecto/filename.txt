@@ -1,0 +1,11 @@
+Patente: benjamin-1
+ marca: chevrolet
+ modelobemz
+hora de entrada: Mon Nov 23 23:28:24 CLST 2020
+hora de salida: Mon Nov 23 23:59:59 CLST 2020
+Tiempo de estadia: 0h 31m
+Valor hora: 2000
+Valor horas totales : 3000
+Iva                 : 570
+Descuento           : 142 (0.02x0)
+A pagar             : 3428
