@@ -16,9 +16,9 @@ import java.util.logging.Logger;
  */
 public class ArchivoEstacionamiento {
 
-    public void mostrar(String aa) throws IOException {
+    public void mostrar(String BoletaArchivo) throws IOException {
         try {
-            String ruta = "filename.txt";
+            String ruta = "ArchivoBoleta.txt";
             File file = new File(ruta);
             // Si el archivo no existe es creado
             if (!file.exists()) {
@@ -26,7 +26,7 @@ public class ArchivoEstacionamiento {
             }
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(aa);
+            bw.write(BoletaArchivo);
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
