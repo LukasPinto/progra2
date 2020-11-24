@@ -17,16 +17,27 @@ public class Proyecto {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
 
         Auto auto = new Auto("Sedan", "acab-12", "Chevrolet", "Corsa", false);
-        Camioneta cam=new Camioneta("3/4","angel-1","mercedes benz","asdfasdf",false);
-        auto.setHoraSalida(new Date(120, 10, 23, 22, 55, 6));
+        Camioneta cam = new Camioneta("3/4", "angel-1", "mercedes benz", "asdfasdf", false);
+        Camion camion = new Camion("grande", "Cama", "benjamin-1", "chevrolet", "bemz", false);
+        Moto moto = new Moto("Deportiva", "asdf-32", "harley devitson", "r1", false);
+        moto.setHoraSalida(new Date(120, 10, 23, 23, 59, 59));
+        camion.setHoraSalida(new Date(120, 10, 23, 23, 59, 59));
+        auto.setHoraSalida(new Date(120, 10, 23, 23, 59, 59));
         cam.setHoraSalida(new Date(120, 10, 23, 23, 59, 59));
         System.out.println(auto.horaIngreso + "   " + auto.horaSalida);
-        System.out.println(cam.horaIngreso+"   "+cam.horaSalida);
+        System.out.println(cam.horaIngreso + "   " + cam.horaSalida);
+        System.out.println(camion.horaIngreso + "   " + camion.horaSalida);
+        System.out.println(moto.horaIngreso + "   " + moto.horaSalida);
         RegistroEstacionamiento r1 = new RegistroEstacionamiento();
         r1.ingresarAutoCamioneta(auto);
         r1.ingresarAutoCamioneta(cam);
+        r1.ingresarCamion(camion);
+        r1.ingresarMoto(moto);
+        
         r1.generarBoletaAutoCamionetas(auto);
         r1.generarBoletaAutoCamionetas(cam);
+        r1.generarBoletaCamion(camion);
+        r1.generarBoletaMotos(moto);
     }
 
 }

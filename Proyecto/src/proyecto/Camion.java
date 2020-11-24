@@ -10,23 +10,23 @@ package proyecto;
  * @author Raigou
  */
 public class Camion extends Vehiculo {
+
     private String tipoCamion;
-    private int tamaño;
-    
-    public Camion(){
+    private String tamanoCamion;
+
+    public Camion() {
         super();
     }
 
-    public Camion(String tipoCamion, int tamaño) {
-        this.tipoCamion = tipoCamion;
-        this.tamaño = tamaño;
-    }
-
-    public Camion(String tipoCamion, int tamaño, String patente, String Marca, String modelo, boolean trabajador) {
+    public Camion(String tipoCamion, String tamanoCamion, String patente, String Marca, String modelo, boolean trabajador) {
         super(patente, Marca, modelo, trabajador);
         this.tipoCamion = tipoCamion;
-        this.tamaño = tamaño;
+        this.tamanoCamion = tamanoCamion;
     }
+
+   
+
+   
 
     public String getTipoCamion() {
         return tipoCamion;
@@ -36,31 +36,28 @@ public class Camion extends Vehiculo {
         this.tipoCamion = tipoCamion;
     }
 
-    public int getTamaño() {
-        return tamaño;
-    }
+  
 
-    public void setTamaño(int tamaño) {
-        this.tamaño = tamaño;
-    }
-        @Override
+    @Override
     public int calcularPrecio(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cantHoras * Caja.VALOR_HORA_CAMION;
     }
 
     @Override
     public int calcularDescuento(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double porcentajeDesc = (cantHoras / 0.5) * Caja.DESC_MIN;
+
+        return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
     }
 
     @Override
     public int obtenerIVA(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (int) (calcularPrecio(cantHoras) * Caja.IVA);
     }
 
     @Override
     public int obtenerTotal(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
     }
-    
+
 }

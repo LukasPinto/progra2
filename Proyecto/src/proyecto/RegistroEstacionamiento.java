@@ -123,7 +123,7 @@ public class RegistroEstacionamiento {
             System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
             System.out.println("Valor horas totales : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularPrecio(horasContabilizadas));
             System.out.println("Iva                 : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerIVA(horasContabilizadas));
-            System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas)+" ("+Caja.DESC_MIN+"x"+(int)(diff_horas/0.5)+")");
+            System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (diff_horas / 0.5) + ")");
             System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(horasContabilizadas));
         } else {
             System.out.println("Patente: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).patente + " marca: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).Marca + " modelo" + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).modelo);
@@ -133,11 +133,59 @@ public class RegistroEstacionamiento {
             System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
             System.out.println("Valor horas totales : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularPrecio(horasContabilizadas));
             System.out.println("Iva                 : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerIVA(horasContabilizadas));
-            System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas)+" ("+Caja.DESC_MIN+"x"+(int)(diff_horas/0.5)+")");
+            System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (diff_horas / 0.5) + ")");
             System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(horasContabilizadas));
-            
+
         }
 
     }
+
+    public void generarBoletaCamion(Camion camion) {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+        int horasContabilizadas;
+        Calendar a = getCalendar(camion.getHoraIngreso());
+        Calendar b = getCalendar(camion.getHoraSalida());
+        //System.out.println(a.toString()+"  "+b.toString());
+        int diff_horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+        int diff_minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+        int minutos_diff = diff_horas * 60 + diff_minutos;
+        System.out.println(diff_horas + "    " + diff_minutos + "   " + minutos_diff);
+        minutos_diff = minutos_diff - 10;// se descuentas los primeros 10 min gratis
+        System.out.println(minutos_diff);
+        horasContabilizadas = (int) (minutos_diff / 60);// Se toman en cuenta las exactas que estuvo para el calculo
+        System.out.println("Patente: " + listaCamiones.get(listaCamiones.indexOf(camion)).patente + " marca: " + listaCamiones.get(listaCamiones.indexOf(camion)).Marca + " modelo" + listaCamiones.get(listaCamiones.indexOf(camion)).modelo);
+        System.out.println("hora de entrada: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaIngreso);
+        System.out.println("hora de salida: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaSalida);
+        System.out.println("Tiempo de estadia: " + diff_horas + "h " + diff_minutos + "m");
+        System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
+        System.out.println("Valor horas totales : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularPrecio(horasContabilizadas));
+        System.out.println("Iva                 : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerIVA(horasContabilizadas));
+        System.out.println("Descuento           : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (diff_horas / 0.5) + ")");
+        System.out.println("A pagar             : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerTotal(horasContabilizadas));
+
+    }
+    public void generarBoletaMotos(Moto moto) {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+        int horasContabilizadas;
+        Calendar a = getCalendar(moto.getHoraIngreso());
+        Calendar b = getCalendar(moto.getHoraSalida());
+        //System.out.println(a.toString()+"  "+b.toString());
+        int diff_horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+        int diff_minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+        int minutos_diff = diff_horas * 60 + diff_minutos;
+        System.out.println(diff_horas + "    " + diff_minutos + "   " + minutos_diff);
+        minutos_diff = minutos_diff - 10;// se descuentas los primeros 10 min gratis
+        System.out.println(minutos_diff);
+        horasContabilizadas = (int) (minutos_diff / 60);// Se toman en cuenta las exactas que estuvo para el calculo
+        System.out.println("Patente: " + listaMotos.get(listaMotos.indexOf(moto)).patente + " marca: " + listaMotos.get(listaMotos.indexOf(moto)).Marca + " modelo" + listaMotos.get(listaMotos.indexOf(moto)).modelo);
+        System.out.println("hora de entrada: " + listaMotos.get(listaMotos.indexOf(moto)).horaIngreso);
+        System.out.println("hora de salida: " + listaMotos.get(listaMotos.indexOf(moto)).horaSalida);
+        System.out.println("Tiempo de estadia: " + diff_horas + "h " + diff_minutos + "m");
+        System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
+        System.out.println("Valor horas totales : " + listaMotos.get(listaMotos.indexOf(moto)).calcularPrecio(horasContabilizadas));
+        System.out.println("Iva                 : " + listaMotos.get(listaMotos.indexOf(moto)).obtenerIVA(horasContabilizadas));
+        System.out.println("Descuento           : " + listaMotos.get(listaMotos.indexOf(moto)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (diff_horas / 0.5) + ")");
+        System.out.println("A pagar             : " + listaMotos.get(listaMotos.indexOf(moto)).obtenerTotal(horasContabilizadas));
+
+    }
+    
 
 }
