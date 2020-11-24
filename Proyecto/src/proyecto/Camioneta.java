@@ -29,13 +29,19 @@ public class Camioneta extends Vehiculo{
         this.tipoCamioneta = tipoCamioneta;
     }
 
-    @Override
+   @Override
     public int calcularPrecio(int cantHoras) {
+        if (cantHoras==0) {
+            cantHoras=1;
+        }
       return cantHoras*Caja.VALOR_HORA_CAMIONETA;
     }
 
     @Override
     public int calcularDescuento(int cantHoras) {
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
         double porcentajeDesc=(cantHoras/0.5)*Caja.DESC_MIN;
         
        return (int)((calcularPrecio(cantHoras)+obtenerIVA(cantHoras))*porcentajeDesc);
@@ -43,11 +49,17 @@ public class Camioneta extends Vehiculo{
 
     @Override
     public int obtenerIVA(int cantHoras) {
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
         return (int)(calcularPrecio(cantHoras)*Caja.IVA);
     }
 
     @Override
     public int obtenerTotal(int cantHoras) {
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
       return calcularPrecio(cantHoras)+obtenerIVA(cantHoras)-calcularDescuento(cantHoras);
     }
     

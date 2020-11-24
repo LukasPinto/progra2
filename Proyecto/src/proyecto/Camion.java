@@ -38,26 +38,38 @@ public class Camion extends Vehiculo {
 
   
 
-    @Override
+   @Override
     public int calcularPrecio(int cantHoras) {
-        return cantHoras * Caja.VALOR_HORA_CAMION;
+        if (cantHoras==0) {
+            cantHoras=1;
+        }
+      return cantHoras*Caja.VALOR_HORA_CAMION;
     }
 
     @Override
     public int calcularDescuento(int cantHoras) {
-        double porcentajeDesc = (cantHoras / 0.5) * Caja.DESC_MIN;
-
-        return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
+        double porcentajeDesc=(cantHoras/0.5)*Caja.DESC_MIN;
+        
+       return (int)((calcularPrecio(cantHoras)+obtenerIVA(cantHoras))*porcentajeDesc);
     }
 
     @Override
     public int obtenerIVA(int cantHoras) {
-        return (int) (calcularPrecio(cantHoras) * Caja.IVA);
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
+        return (int)(calcularPrecio(cantHoras)*Caja.IVA);
     }
 
     @Override
     public int obtenerTotal(int cantHoras) {
-        return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
+         if (cantHoras==0) {
+            cantHoras=1;
+        }
+      return calcularPrecio(cantHoras)+obtenerIVA(cantHoras)-calcularDescuento(cantHoras);
     }
 
 }

@@ -5,8 +5,6 @@
  */
 package proyecto;
 
-import java.util.Date;
-
 /**
  *
  * @author Lukas
@@ -16,7 +14,7 @@ public class Proyecto {
     public static void main(String[] args) {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
         RegistroEstacionamiento r1 = new RegistroEstacionamiento();
-        Auto auto = new Auto("Sedan", "acab-12", "Chevrolet", "Corsa", false);
+        Auto auto = new Auto("Sedan", "acab-12", "Chevrolet", "Corsa", true);
         Camioneta cam = new Camioneta("3/4", "angel-1", "mercedes benz", "asdfasdf", false);
         Camion camion = new Camion("grande", "Cama", "benjamin-1", "chevrolet", "bemz", false);
         Moto moto = new Moto("Deportiva", "asdf-32", "harley devitson", "r1", false);
@@ -28,13 +26,15 @@ public class Proyecto {
         System.out.println(cam.horaIngreso + "   " + cam.horaSalida);
         System.out.println(camion.horaIngreso + "   " + camion.horaSalida);
         System.out.println(moto.horaIngreso + "   " + moto.horaSalida);
-
+        System.out.println("");
         r1.generarBoletaAutoCamionetas(auto);
+        System.out.println("");
         r1.generarBoletaAutoCamionetas(cam);
+        System.out.println("");
         r1.generarBoletaCamion(camion);
+        System.out.println("");
         r1.generarBoletaMotos(moto);
 
     }
-    
 
 }
