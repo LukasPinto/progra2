@@ -29,13 +29,15 @@ public class Proyecto {
         System.out.println(camion.horaIngreso + "   " + camion.horaSalida);
         System.out.println(moto.horaIngreso + "   " + moto.horaSalida);
         System.out.println("");
-        r1.generarBoletaAutoCamionetas(auto);
+       
         System.out.println("");
         r1.generarBoletaAutoCamionetas(cam);
         System.out.println("");
         r1.generarBoletaCamion(camion);
         System.out.println("");
         r1.generarBoletaMotos(moto);
+
+        r1.cerrarEstacionamineto();
 
     }
 
