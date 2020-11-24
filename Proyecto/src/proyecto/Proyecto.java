@@ -5,13 +5,15 @@
  */
 package proyecto;
 
+import java.io.IOException;
+
 /**
  *
  * @author Lukas
  */
 public class Proyecto {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Bienvenido a 'Estacionamiento Ángel Araya' ");
         RegistroEstacionamiento r1 = new RegistroEstacionamiento();
         Auto auto = new Auto("Sedan", "acab-12", "Chevrolet", "Corsa", true);

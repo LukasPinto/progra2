@@ -172,6 +172,8 @@ public class RegistroEstacionamiento {
         ///////////////////////
         ArchivoEstacionamiento n= new ArchivoEstacionamiento();
         n.mostrar(aa);
+         retirarCamion(camion);
+         this.cantBoletasAutosCamionetas = this.cantBoletasAutosCamionetas + 1;
 
     }
 
