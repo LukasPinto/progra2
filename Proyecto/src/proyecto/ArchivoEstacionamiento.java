@@ -16,20 +16,45 @@ import java.util.logging.Logger;
  */
 public class ArchivoEstacionamiento {
 
-    public void mostrar(String BoletaArchivo) throws IOException {
-        try {
-            String ruta = "ArchivoBoleta.txt";
-            File file = new File(ruta);
-            // Si el archivo no existe es creado
-            if (!file.exists()) {
-                file.createNewFile();
+    public void registrarBoletas(String nombreArchivo, String dato) throws IOException {
+        File archivo = new File("registroBoletas.txt");
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+                String ruta = nombreArchivo;
+                // Si el archivo no existe es creado
+
+                FileWriter fw = new FileWriter(archivo, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(dato + "\n");
+                bw.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(BoletaArchivo);
-            bw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            try {
+
+                String ruta = nombreArchivo;
+                // Si el archivo no existe es creado
+
+                FileWriter fw = new FileWriter(archivo, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(dato + "\n");
+                bw.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    public void limpiarArchivo(File archivo) throws IOException {
+        archivo.delete();
+        try {
+            archivo.createNewFile();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
     }
 }
