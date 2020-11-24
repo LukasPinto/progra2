@@ -45,7 +45,7 @@ public class Camioneta extends Vehiculo{
 
     @Override
     public int calcularDescuento(int cantMinutos,int cantHoras) {
-        int cantDescuentos = (int) Math.round(cantMinutos / 0.5);
+        int cantDescuentos = (int) Math.round(cantMinutos / 30);
 
         double porcentajeDesc = cantDescuentos * Caja.DESC_MIN;
 
