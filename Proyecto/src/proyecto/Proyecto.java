@@ -40,6 +40,12 @@ public class Proyecto {
         for (Object listaAutosCamione : r1.getListaAutosCamiones()) {
             r1.cerrarEstacionamineto((Vehiculo) listaAutosCamione);
         }
+        for (Object listaCamione : r1.getListaCamiones()) {
+            r1.cerrarEstacionamineto((Vehiculo) listaCamione);
+        }
+         for (Object listaMoto : r1.getListaMotos()) {
+            r1.cerrarEstacionamineto((Vehiculo) listaMoto);
+        }
         
 
     }
