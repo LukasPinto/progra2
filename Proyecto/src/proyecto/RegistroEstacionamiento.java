@@ -125,6 +125,11 @@ public class RegistroEstacionamiento {
         System.out.println("hora de entrada: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).horaIngreso);
         System.out.println("hora de salida: "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).horaSalida);
         System.out.println("Tiempo de estadia: "+diff_horas+"h "+diff_minutos+"m");
+        System.out.println("Valor hora: "+Caja.VALOR_HORA_AUTO);
+        System.out.println("Valor horas totales :"+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularPrecio(horasContabilizadas));
+        System.out.println("Iva                 : "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerIVA(horasContabilizadas));
+        System.out.println("Descuento           : "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas));
+        System.out.println("A pagar             : "+listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(horasContabilizadas));
         
         
     }

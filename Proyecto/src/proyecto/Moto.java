@@ -31,7 +31,7 @@ public class Moto extends Vehiculo{
     
     
     @Override
-    public int calcularPrecio() {
+    public int calcularPrecio(int cantHoras) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

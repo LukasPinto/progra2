@@ -89,7 +89,7 @@ public abstract class Vehiculo implements Caja{
         return "Vehiculo{" + "patente=" + patente + ", Marca=" + Marca + ", modelo=" + modelo + ", trabajador=" + trabajador + '}';
     }
     
-    public abstract int calcularPrecio();
+    public abstract int calcularPrecio(int cantHoras);
 
     
 }
