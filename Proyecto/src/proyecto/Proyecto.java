@@ -33,7 +33,7 @@ public class Proyecto {
         System.out.println("");
         r1.generarBoletaAutoCamionetas(cam);
         System.out.println("");
-        r1.generarBoletaCamion(camion);
+     
         System.out.println("");
         r1.generarBoletaMotos(moto);
 
@@ -46,6 +46,9 @@ public class Proyecto {
          for (Object listaMoto : r1.getListaMotos()) {
             r1.cerrarEstacionamineto((Vehiculo) listaMoto);
         }
+        r1.vaciarListaAutoCamionetas();
+        r1.vaciarListaCamiones();
+        r1.vaciarListaMotos();
         
 
     }
