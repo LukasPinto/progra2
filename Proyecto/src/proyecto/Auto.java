@@ -9,10 +9,10 @@ package proyecto;
  *
  * @author Lukas
  */
-public class Auto extends Vehiculo{
+public class Auto extends Vehiculo {
+
     private String tipoDeAuto;//sedan, deportivo, de lujo
-    
-   
+
     public Auto() {
         super();
     }
@@ -32,36 +32,62 @@ public class Auto extends Vehiculo{
 
     @Override
     public int calcularPrecio(int cantHoras) {
-        if (cantHoras==0) {
-            cantHoras=1;
+        if (cantHoras == 0) {
+            cantHoras = 1;
+            return cantHoras * Caja.VALOR_HORA_AUTO;
+        } else if (cantHoras < 0) {//si estuvo -x minutos significa que estuvo menos de 10 minutos por lo tanto es gratis
+            cantHoras = 0;
+            return cantHoras * Caja.VALOR_HORA_AUTO;
+        } else {
+            return cantHoras * Caja.VALOR_HORA_AUTO;
         }
-      return cantHoras*Caja.VALOR_HORA_AUTO;
+
     }
 
     @Override
     public int calcularDescuento(int cantHoras) {
-         if (cantHoras==0) {
-            cantHoras=1;
+        double porcentajeDesc = (cantHoras / 0.5) * Caja.DESC_MIN;
+        if (cantHoras == 0) {
+            cantHoras = 1;
+            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
+        } else if (cantHoras < 0) {
+            cantHoras = 0;
+            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
+        } else {
+            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
+
         }
-        double porcentajeDesc=(cantHoras/0.5)*Caja.DESC_MIN;
-        
-       return (int)((calcularPrecio(cantHoras)+obtenerIVA(cantHoras))*porcentajeDesc);
     }
 
     @Override
     public int obtenerIVA(int cantHoras) {
-         if (cantHoras==0) {
-            cantHoras=1;
+        if (cantHoras == 0) {
+            cantHoras = 1;
+            return (int) (calcularPrecio(cantHoras) * Caja.IVA);
+        }else if(cantHoras<0){
+            cantHoras=0;
+            return (int) (calcularPrecio(cantHoras) * Caja.IVA);
         }
-        return (int)(calcularPrecio(cantHoras)*Caja.IVA);
+        else{
+            return (int) (calcularPrecio(cantHoras) * Caja.IVA);
+        }
+        
     }
 
     @Override
     public int obtenerTotal(int cantHoras) {
-         if (cantHoras==0) {
-            cantHoras=1;
+        if (cantHoras == 0) {
+            cantHoras = 1;
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
         }
-      return calcularPrecio(cantHoras)+obtenerIVA(cantHoras)-calcularDescuento(cantHoras);
+        else if (cantHoras<0) {
+            cantHoras = 0;
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
+        }
+        else{
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
+        }
+        
     }
 
 }
