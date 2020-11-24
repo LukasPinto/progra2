@@ -167,7 +167,7 @@ public class RegistroEstacionamiento {
         listaCamiones.get(listaCamiones.indexOf(camion)).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
         Calendar a = getCalendar(camion.getHoraIngreso());
         Calendar b = getCalendar(camion.getHoraSalida());
-        //System.out.println(a.toString()+"  "+b.toString());
+       
         int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
         int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
         int minutosTotales = horas * 60 + minutos;
