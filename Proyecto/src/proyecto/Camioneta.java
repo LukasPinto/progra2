@@ -31,23 +31,24 @@ public class Camioneta extends Vehiculo{
 
     @Override
     public int calcularPrecio(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return cantHoras*Caja.VALOR_HORA_CAMIONETA;
     }
 
     @Override
     public int calcularDescuento(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double porcentajeDesc=(cantHoras/0.5)*Caja.DESC_MIN;
+        
+       return (int)((calcularPrecio(cantHoras)+obtenerIVA(cantHoras))*porcentajeDesc);
     }
 
     @Override
     public int obtenerIVA(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (int)(calcularPrecio(cantHoras)*Caja.IVA);
     }
 
     @Override
     public int obtenerTotal(int cantHoras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return calcularPrecio(cantHoras)+obtenerIVA(cantHoras)-calcularDescuento(cantHoras);
     }
-    
     
 }
