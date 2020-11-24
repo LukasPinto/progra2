@@ -133,8 +133,8 @@ public class RegistroEstacionamiento {
                 System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
                 System.out.println("Valor horas totales : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularPrecio(horasContabilizadas));
                 System.out.println("Iva                 : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerIVA(horasContabilizadas));
-                System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")");
-                System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(horasContabilizadas));
+                System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(minutosTotales,horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")");
+                System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(minutosTotales,horasContabilizadas));
             } else {
                 System.out.println("Patente: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).patente + " marca: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).Marca + " modelo: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).modelo);
                 System.out.println("hora de entrada: " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).horaIngreso);
@@ -143,8 +143,8 @@ public class RegistroEstacionamiento {
                 System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
                 System.out.println("Valor horas totales : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularPrecio(horasContabilizadas));
                 System.out.println("Iva                 : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerIVA(horasContabilizadas));
-                System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")");
-                System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(horasContabilizadas));
+                System.out.println("Descuento           : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).calcularDescuento(minutosTotales,horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")");
+                System.out.println("A pagar             : " + listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).obtenerTotal(minutosTotales,horasContabilizadas));
 
             }
             retirarAutoCamioneta(vehiculo);
@@ -168,7 +168,7 @@ public class RegistroEstacionamiento {
 
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
 
-        String aa="Patente: " + listaCamiones.get(listaCamiones.indexOf(camion)).patente + "\n marca: " + listaCamiones.get(listaCamiones.indexOf(camion)).Marca + "\n modelo" + listaCamiones.get(listaCamiones.indexOf(camion)).modelo + "\nhora de entrada: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaIngreso+"\nhora de salida: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaSalida+"\nTiempo de estadia: " + horas + "h " + minutos + "m"+"\nValor hora: " + Caja.VALOR_HORA_AUTO+"\nValor horas totales : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularPrecio(horasContabilizadas)+"\nIva                 : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerIVA(horasContabilizadas)+"\nDescuento           : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")"+"\nA pagar             : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerTotal(horasContabilizadas);
+        String aa="Patente: " + listaCamiones.get(listaCamiones.indexOf(camion)).patente + "\n marca: " + listaCamiones.get(listaCamiones.indexOf(camion)).Marca + "\n modelo" + listaCamiones.get(listaCamiones.indexOf(camion)).modelo + "\nhora de entrada: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaIngreso+"\nhora de salida: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaSalida+"\nTiempo de estadia: " + horas + "h " + minutos + "m"+"\nValor hora: " + Caja.VALOR_HORA_AUTO+"\nValor horas totales : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularPrecio(horasContabilizadas)+"\nIva                 : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerIVA(horasContabilizadas)+"\nDescuento           : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularDescuento(minutosTotales,horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")"+"\nA pagar             : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerTotal( minutosTotales,horasContabilizadas);
         ///////////////////////
         ArchivoEstacionamiento n= new ArchivoEstacionamiento();
         n.mostrar(aa);
@@ -194,8 +194,8 @@ public class RegistroEstacionamiento {
         System.out.println("Valor hora: " + Caja.VALOR_HORA_AUTO);
         System.out.println("Valor horas totales : " + listaMotos.get(listaMotos.indexOf(moto)).calcularPrecio(horasContabilizadas));
         System.out.println("Iva                 : " + listaMotos.get(listaMotos.indexOf(moto)).obtenerIVA(horasContabilizadas));
-        System.out.println("Descuento           : " + listaMotos.get(listaMotos.indexOf(moto)).calcularDescuento(horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (horas / 0.5) + ")");
-        System.out.println("A pagar             : " + listaMotos.get(listaMotos.indexOf(moto)).obtenerTotal(horasContabilizadas));
+        System.out.println("Descuento           : " + listaMotos.get(listaMotos.indexOf(moto)).calcularDescuento(minutosTotales,horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (horas / 0.5) + ")");
+        System.out.println("A pagar             : " + listaMotos.get(listaMotos.indexOf(moto)).obtenerTotal(minutosTotales,horasContabilizadas));
         retirarMoto(moto);
         this.cantBoletasMotos = this.cantBoletasMotos + 1;
     }

@@ -20,9 +20,9 @@ public interface Caja {
     int LIMITE_MOTOS=100;
     int LIMITE_CAMIONES=50;
     
-    int calcularDescuento(int cantHoras);
+    int calcularDescuento(int cantMinutos,int cantHoras);
     public int obtenerIVA(int cantHoras);
-    public int obtenerTotal(int cantHoras);
+    public int obtenerTotal(int cantMinutos,int cantHoras);
     
     
     

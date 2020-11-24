@@ -29,7 +29,7 @@ public class Camioneta extends Vehiculo{
         this.tipoCamioneta = tipoCamioneta;
     }
 
-   @Override
+    @Override
     public int calcularPrecio(int cantHoras) {
         if (cantHoras == 0) {
             cantHoras = 1;
@@ -44,18 +44,12 @@ public class Camioneta extends Vehiculo{
     }
 
     @Override
-    public int calcularDescuento(int cantHoras) {
-        double porcentajeDesc = (cantHoras / 0.5) * Caja.DESC_MIN;
-        if (cantHoras == 0) {
-            cantHoras = 1;
-            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
-        } else if (cantHoras < 0) {
-            cantHoras = 0;
-            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
-        } else {
-            return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
+    public int calcularDescuento(int cantMinutos,int cantHoras) {
+        int cantDescuentos = (int) Math.round(cantMinutos / 0.5);
 
-        }
+        double porcentajeDesc = cantDescuentos * Caja.DESC_MIN;
+
+        return (int) ((calcularPrecio(cantHoras) + obtenerIVA(cantHoras)) * porcentajeDesc);
     }
 
     @Override
@@ -63,30 +57,27 @@ public class Camioneta extends Vehiculo{
         if (cantHoras == 0) {
             cantHoras = 1;
             return (int) (calcularPrecio(cantHoras) * Caja.IVA);
-        }else if(cantHoras<0){
-            cantHoras=0;
+        } else if (cantHoras < 0) {
+            cantHoras = 0;
+            return (int) (calcularPrecio(cantHoras) * Caja.IVA);
+        } else {
             return (int) (calcularPrecio(cantHoras) * Caja.IVA);
         }
-        else{
-            return (int) (calcularPrecio(cantHoras) * Caja.IVA);
-        }
-        
+
     }
 
     @Override
-    public int obtenerTotal(int cantHoras) {
+    public int obtenerTotal(int cantMinutos,int cantHoras) {
         if (cantHoras == 0) {
             cantHoras = 1;
-            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
-        }
-        else if (cantHoras<0) {
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantMinutos,cantHoras);
+        } else if (cantHoras < 0) {
             cantHoras = 0;
-            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantMinutos,cantHoras);
+        } else {
+            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantMinutos,cantHoras);
         }
-        else{
-            return calcularPrecio(cantHoras) + obtenerIVA(cantHoras) - calcularDescuento(cantHoras);
-        }
-        
+
     }
     
 }
