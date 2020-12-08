@@ -149,6 +149,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPatente">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatenteKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMarca">
           <Properties>
@@ -159,21 +162,33 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMarca">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMarcaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="optAutoCamioneta">
           <Properties>
             <Property name="text" type="java.lang.String" value="Auto/Camioneta"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optAutoCamionetaMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="optMoto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Moto"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optMotoMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="optCamion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cami&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optCamionMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnVolver">
           <Properties>
@@ -194,6 +209,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtModelo">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtModeloKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTipodeVehiculo">
           <Properties>

@@ -29,12 +29,12 @@ public class Lista extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblTituloLista = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscarPatente = new javax.swing.JTextField();
         lblBuscarPantente = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        btnGenerarLista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +44,12 @@ public class Lista extends javax.swing.JFrame {
         lblTituloLista.setForeground(new java.awt.Color(0, 0, 0));
         lblTituloLista.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloLista.setText("Lista Vehiculos");
+
+        txtBuscarPatente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarPatenteKeyTyped(evt);
+            }
+        });
 
         lblBuscarPantente.setForeground(new java.awt.Color(0, 0, 0));
         lblBuscarPantente.setText("Buscar Pantente:");
@@ -76,9 +82,19 @@ public class Lista extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setText("Volver");
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Generar Lista");
+        btnGenerarLista.setText("Generar Lista");
+        btnGenerarLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarListaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,13 +110,13 @@ public class Lista extends javax.swing.JFrame {
                         .addGap(84, 84, 84)
                         .addComponent(lblBuscarPantente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscarPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(btnGenerarLista)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -110,14 +126,14 @@ public class Lista extends javax.swing.JFrame {
                 .addComponent(lblTituloLista)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscarPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblBuscarPantente))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(btnGenerarLista)
+                    .addComponent(btnVolver))
                 .addContainerGap())
         );
 
@@ -134,6 +150,18 @@ public class Lista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtBuscarPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPatenteKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarPatenteKeyTyped
+
+    private void btnGenerarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarListaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarListaActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,13 +199,13 @@ public class Lista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnGenerarLista;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblBuscarPantente;
     private javax.swing.JLabel lblTituloLista;
+    private javax.swing.JTextField txtBuscarPatente;
     // End of variables declaration//GEN-END:variables
 }

@@ -52,24 +52,67 @@ public class Retiro extends javax.swing.JFrame {
         lblTituloRetirar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloRetirar.setText("Retirar Vehiculo");
 
+        txtPatente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPatenteKeyTyped(evt);
+            }
+        });
+
         lblIngresarPatente.setForeground(new java.awt.Color(0, 0, 0));
         lblIngresarPatente.setText("Ingrese la Patente:");
 
         optAutoCamioneta.setText("Auto/Camioneta");
+        optAutoCamioneta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optAutoCamionetaMouseClicked(evt);
+            }
+        });
 
         optMoto.setText("Moto");
+        optMoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optMotoMouseClicked(evt);
+            }
+        });
 
         optCamion.setText("Camión");
+        optCamion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optCamionMouseClicked(evt);
+            }
+        });
 
         btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         btnRetirar.setText("Retirar");
+        btnRetirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetirarActionPerformed(evt);
+            }
+        });
 
         lblMarca.setForeground(new java.awt.Color(0, 0, 0));
         lblMarca.setText("Marca:");
 
         lblModelo.setForeground(new java.awt.Color(0, 0, 0));
         lblModelo.setText("Modelo:");
+
+        txtMarca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMarcaKeyTyped(evt);
+            }
+        });
+
+        txtModelo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtModeloKeyTyped(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tipo de Vehiculo:");
@@ -154,6 +197,38 @@ public class Retiro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optAutoCamionetaMouseClicked
+
+    private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optMotoMouseClicked
+
+    private void optCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optCamionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optCamionMouseClicked
+
+    private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRetirarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatenteKeyTyped
+
+    private void txtMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMarcaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMarcaKeyTyped
+
+    private void txtModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtModeloKeyTyped
 
     /**
      * @param args the command line arguments
