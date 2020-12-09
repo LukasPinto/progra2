@@ -27,6 +27,7 @@ public class Retiro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblTituloRetirar = new javax.swing.JLabel();
         txtPatente = new javax.swing.JTextField();
@@ -61,6 +62,8 @@ public class Retiro extends javax.swing.JFrame {
         lblIngresarPatente.setForeground(new java.awt.Color(0, 0, 0));
         lblIngresarPatente.setText("Ingrese la Patente:");
 
+        buttonGroup1.add(optAutoCamioneta);
+        optAutoCamioneta.setSelected(true);
         optAutoCamioneta.setText("Auto/Camioneta");
         optAutoCamioneta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -68,6 +71,7 @@ public class Retiro extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(optMoto);
         optMoto.setText("Moto");
         optMoto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -75,6 +79,7 @@ public class Retiro extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(optCamion);
         optCamion.setText("Camión");
         optCamion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -240,6 +245,7 @@ public class Retiro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetirar;
     private javax.swing.JButton btnVolver;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblIngresarPatente;

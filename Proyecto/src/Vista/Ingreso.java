@@ -27,6 +27,8 @@ public class Ingreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblIngresar = new javax.swing.JLabel();
@@ -72,6 +74,8 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(optAutoCamioneta);
+        optAutoCamioneta.setSelected(true);
         optAutoCamioneta.setText("Auto/Camioneta");
         optAutoCamioneta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -79,6 +83,7 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(optMoto);
         optMoto.setText("Moto");
         optMoto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,6 +91,7 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(optCamion);
         optCamion.setText("Camión");
         optCamion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -122,6 +128,7 @@ public class Ingreso extends javax.swing.JFrame {
         lblTrabajador.setForeground(new java.awt.Color(0, 0, 0));
         lblTrabajador.setText("Trabajador:");
 
+        buttonGroup2.add(optTrabajadorSi);
         optTrabajadorSi.setText("Si");
         optTrabajadorSi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -129,6 +136,8 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(optTrabajadorNo);
+        optTrabajadorNo.setSelected(true);
         optTrabajadorNo.setText("No");
         optTrabajadorNo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -282,6 +291,8 @@ public class Ingreso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnVolver;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblIngresar;
     private javax.swing.JLabel lblMarca;
