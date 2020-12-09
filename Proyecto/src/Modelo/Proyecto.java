@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import Controlador.RegistroEstacionamiento;
 import java.io.IOException;
 
 /**

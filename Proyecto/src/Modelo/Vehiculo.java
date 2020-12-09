@@ -13,12 +13,12 @@ import java.util.Date;
  */
 public abstract class Vehiculo implements Caja{
 
-    protected String patente;
-    protected String Marca;
-    protected String modelo;
-    protected boolean trabajador;//si es un vehiculo de un trabajador no se le cobra
-    protected Date horaIngreso;
-    protected Date horaSalida;
+    public String patente;
+    public String Marca;
+    public String modelo;
+    public boolean trabajador;//si es un vehiculo de un trabajador no se le cobra
+    public Date horaIngreso;
+    public Date horaSalida;
 
     //contructores
     public Vehiculo() {
