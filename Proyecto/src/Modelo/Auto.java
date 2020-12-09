@@ -3,42 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package Modelo;
 
 /**
  *
- * @author Benjamin
+ * @author Lukas
  */
-public class Camioneta extends Vehiculo{
-    private String tipoCamioneta; // pickup, familiar
+public class Auto extends Vehiculo {
 
-    public Camioneta() {
+    private String tipoDeAuto;//sedan, deportivo, de lujo
+
+    public Auto() {
         super();
     }
 
-    public Camioneta(String tipoCamioneta, String patente, String Marca, String modelo, boolean trabajador) {
+    public Auto(String tipoDeAuto, String patente, String Marca, String modelo, boolean trabajador) {
         super(patente, Marca, modelo, trabajador);
-        this.tipoCamioneta = tipoCamioneta;
+        this.tipoDeAuto = tipoDeAuto;
     }
 
-    public String getTipoCamioneta() {
-        return tipoCamioneta;
+    public String getTipoDeAuto() {
+        return tipoDeAuto;
     }
 
-    public void setTipoCamioneta(String tipoCamioneta) {
-        this.tipoCamioneta = tipoCamioneta;
+    public void setTipoDeAuto(String tipoDeAuto) {
+        this.tipoDeAuto = tipoDeAuto;
     }
 
     @Override
     public int calcularPrecio(int cantHoras) {
         if (cantHoras == 0) {
             cantHoras = 1;
-            return cantHoras * Caja.VALOR_HORA_CAMIONETA;
+            return cantHoras * Caja.VALOR_HORA_AUTO;
         } else if (cantHoras < 0) {//si estuvo -x minutos significa que estuvo menos de 10 minutos por lo tanto es gratis
             cantHoras = 0;
-            return cantHoras * Caja.VALOR_HORA_CAMIONETA;
+            return cantHoras * Caja.VALOR_HORA_AUTO;
         } else {
-            return cantHoras * Caja.VALOR_HORA_CAMIONETA;
+            return cantHoras * Caja.VALOR_HORA_AUTO;
         }
 
     }
@@ -79,5 +80,5 @@ public class Camioneta extends Vehiculo{
         }
 
     }
-    
+
 }

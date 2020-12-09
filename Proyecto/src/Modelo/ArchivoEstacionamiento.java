@@ -1,4 +1,4 @@
-package proyecto;
+package Modelo;
 
 import java.io.BufferedWriter;
 import java.io.File;

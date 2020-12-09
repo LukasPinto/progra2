@@ -3,43 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package Modelo;
 
 /**
  *
- * @author Lukas
+ * @author Benjamin
  */
-public class Auto extends Vehiculo {
+public class Moto extends Vehiculo{
+    private String tipoMoto;
 
-    private String tipoDeAuto;//sedan, deportivo, de lujo
-
-    public Auto() {
+    public Moto() {
         super();
     }
 
-    public Auto(String tipoDeAuto, String patente, String Marca, String modelo, boolean trabajador) {
+    public Moto(String tipoMoto, String patente, String Marca, String modelo, boolean trabajador) {
         super(patente, Marca, modelo, trabajador);
-        this.tipoDeAuto = tipoDeAuto;
+        this.tipoMoto = tipoMoto;
     }
 
-    public String getTipoDeAuto() {
-        return tipoDeAuto;
+    public String getTipoMoto() {
+        return tipoMoto;
     }
 
-    public void setTipoDeAuto(String tipoDeAuto) {
-        this.tipoDeAuto = tipoDeAuto;
+    public void setTipoMoto(String tipoMoto) {
+        this.tipoMoto = tipoMoto;
     }
-
-    @Override
+     @Override
     public int calcularPrecio(int cantHoras) {
         if (cantHoras == 0) {
             cantHoras = 1;
-            return cantHoras * Caja.VALOR_HORA_AUTO;
+            return cantHoras * Caja.VALOR_HORA_MOTO;
         } else if (cantHoras < 0) {//si estuvo -x minutos significa que estuvo menos de 10 minutos por lo tanto es gratis
             cantHoras = 0;
-            return cantHoras * Caja.VALOR_HORA_AUTO;
+            return cantHoras * Caja.VALOR_HORA_MOTO;
         } else {
-            return cantHoras * Caja.VALOR_HORA_AUTO;
+            return cantHoras * Caja.VALOR_HORA_MOTO;
         }
 
     }
@@ -80,5 +78,5 @@ public class Auto extends Vehiculo {
         }
 
     }
-
+   
 }
