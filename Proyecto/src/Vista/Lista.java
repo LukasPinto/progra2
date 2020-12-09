@@ -160,7 +160,8 @@ public class Lista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarListaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**

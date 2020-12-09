@@ -199,15 +199,21 @@ public class Retiro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(true);
+        optMoto.setSelected(false);
+        optCamion.setSelected(false);
     }//GEN-LAST:event_optAutoCamionetaMouseClicked
 
     private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(false);
+        optMoto.setSelected(true);
+        optCamion.setSelected(false);
     }//GEN-LAST:event_optMotoMouseClicked
 
     private void optCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optCamionMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(false);
+        optMoto.setSelected(false);
+        optCamion.setSelected(true);
     }//GEN-LAST:event_optCamionMouseClicked
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
@@ -215,7 +221,8 @@ public class Retiro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetirarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped

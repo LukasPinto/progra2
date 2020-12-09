@@ -91,8 +91,18 @@ public class Ingreso extends javax.swing.JFrame {
         });
 
         btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         lblModelo.setForeground(new java.awt.Color(0, 0, 0));
         lblModelo.setText("Modelo:");
@@ -191,15 +201,21 @@ public class Ingreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(true);
+        optMoto.setSelected(false);
+        optCamion.setSelected(false);
     }//GEN-LAST:event_optAutoCamionetaMouseClicked
 
     private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(false);
+        optMoto.setSelected(true);
+        optCamion.setSelected(false);
     }//GEN-LAST:event_optMotoMouseClicked
 
     private void optCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optCamionMouseClicked
-        // TODO add your handling code here:
+        optAutoCamioneta.setSelected(false);
+        optMoto.setSelected(false);
+        optCamion.setSelected(true);
     }//GEN-LAST:event_optCamionMouseClicked
 
     private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped
@@ -213,6 +229,15 @@ public class Ingreso extends javax.swing.JFrame {
     private void txtModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtModeloKeyTyped
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
