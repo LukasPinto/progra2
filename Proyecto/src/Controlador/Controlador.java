@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Benjamin
