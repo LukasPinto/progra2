@@ -32,3 +32,71 @@ Valor horas totales : 18000
 Iva                 : 3420
 Descuento           : 5569 (0.02x14)
 A pagar             : 15851
+Patente: angel-1 marca: mercedes benz modeloasdfasdf
+hora de entrada: Wed Dec 09 20:17:23 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 2100
+Valor horas totales : 6300
+Iva                 : 1197
+Descuento           : 1049 (0.02x6)
+A pagar             : 6448
+Patente: asdf-32 marca: harley devitson modelor1
+hora de entrada: Wed Dec 09 20:17:23 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 1500
+Valor horas totales : 4500
+Iva                 : 855
+Descuento           : 749 (0.02x6)
+A pagar             : 4606
+Patente: acab-12 marca: Chevrolet modeloCorsa
+hora de entrada: Wed Dec 09 20:17:23 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 2000
+Valor horas totales : 6000
+vehiculo perteneciente a trabjador
+Patente: benjamin-1 marca: chevrolet modelobemz
+hora de entrada: Wed Dec 09 20:17:23 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 3000
+Valor horas totales : 9000
+Iva                 : 1710
+Descuento           : 1499 (0.02x6)
+A pagar             : 9211
+Patente: angel-1 marca: mercedes benz modeloasdfasdf
+hora de entrada: Wed Dec 09 20:17:30 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 2100
+Valor horas totales : 6300
+Iva                 : 1197
+Descuento           : 1049 (0.02x6)
+A pagar             : 6448
+Patente: asdf-32 marca: harley devitson modelor1
+hora de entrada: Wed Dec 09 20:17:30 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 1500
+Valor horas totales : 4500
+Iva                 : 855
+Descuento           : 749 (0.02x6)
+A pagar             : 4606
+Patente: acab-12 marca: Chevrolet modeloCorsa
+hora de entrada: Wed Dec 09 20:17:30 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 2000
+Valor horas totales : 6000
+vehiculo perteneciente a trabjador
+Patente: benjamin-1 marca: chevrolet modelobemz
+hora de entrada: Wed Dec 09 20:17:30 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 3h 42m
+Valor hora: 3000
+Valor horas totales : 9000
+Iva                 : 1710
+Descuento           : 1499 (0.02x6)
+A pagar             : 9211
