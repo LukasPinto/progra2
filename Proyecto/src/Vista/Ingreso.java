@@ -41,6 +41,9 @@ public class Ingreso extends javax.swing.JFrame {
         lblModelo = new javax.swing.JLabel();
         txtModelo = new javax.swing.JTextField();
         lblTipodeVehiculo = new javax.swing.JLabel();
+        lblTrabajador = new javax.swing.JLabel();
+        optTrabajadorSi = new javax.swing.JRadioButton();
+        optTrabajadorNo = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +119,23 @@ public class Ingreso extends javax.swing.JFrame {
         lblTipodeVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         lblTipodeVehiculo.setText("Tipo de Vehiculo:");
 
+        lblTrabajador.setForeground(new java.awt.Color(0, 0, 0));
+        lblTrabajador.setText("Trabajador:");
+
+        optTrabajadorSi.setText("Si");
+        optTrabajadorSi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optTrabajadorSiMouseClicked(evt);
+            }
+        });
+
+        optTrabajadorNo.setText("No");
+        optTrabajadorNo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optTrabajadorNoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,32 +148,35 @@ public class Ingreso extends javax.swing.JFrame {
                         .addComponent(btnVolver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnIngresar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(lblIngresar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTipodeVehiculo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblModelo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblMarca, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(optAutoCamioneta)
+                            .addComponent(lblTrabajador))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtMarca)
-                            .addComponent(txtPatente)
-                            .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(optTrabajadorSi)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(optTrabajadorNo))
+                            .addComponent(optMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(optCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblMarca)
+                            .addComponent(lblIngresar)
+                            .addComponent(lblModelo)
+                            .addComponent(lblTipodeVehiculo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(143, 143, 143)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(optAutoCamioneta)
-                .addGap(18, 18, 18)
-                .addComponent(optMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(optCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,14 +195,20 @@ public class Ingreso extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblModelo))
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTipodeVehiculo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(optAutoCamioneta)
                     .addComponent(optMoto)
-                    .addComponent(optCamion)
-                    .addComponent(optAutoCamioneta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                    .addComponent(optCamion))
+                .addGap(18, 18, 18)
+                .addComponent(lblTrabajador)
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(optTrabajadorNo)
+                    .addComponent(optTrabajadorSi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnIngresar))
@@ -200,17 +229,18 @@ public class Ingreso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
-        optAutoCamioneta.setSelected(true);
-        optMoto.setSelected(false);
-        optCamion.setSelected(false);
-    }//GEN-LAST:event_optAutoCamionetaMouseClicked
+    private void txtModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtModeloKeyTyped
 
-    private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
-        optAutoCamioneta.setSelected(false);
-        optMoto.setSelected(true);
-        optCamion.setSelected(false);
-    }//GEN-LAST:event_optMotoMouseClicked
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void optCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optCamionMouseClicked
         optAutoCamioneta.setSelected(false);
@@ -218,26 +248,35 @@ public class Ingreso extends javax.swing.JFrame {
         optCamion.setSelected(true);
     }//GEN-LAST:event_optCamionMouseClicked
 
-    private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatenteKeyTyped
+    private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
+        optAutoCamioneta.setSelected(false);
+        optMoto.setSelected(true);
+        optCamion.setSelected(false);
+    }//GEN-LAST:event_optMotoMouseClicked
+
+    private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
+        optAutoCamioneta.setSelected(true);
+        optMoto.setSelected(false);
+        optCamion.setSelected(false);
+    }//GEN-LAST:event_optAutoCamionetaMouseClicked
 
     private void txtMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMarcaKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMarcaKeyTyped
 
-    private void txtModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloKeyTyped
+    private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtModeloKeyTyped
+    }//GEN-LAST:event_txtPatenteKeyTyped
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        this.setVisible(false);
-        this.dispose();
-    }//GEN-LAST:event_btnVolverActionPerformed
+    private void optTrabajadorSiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optTrabajadorSiMouseClicked
+        optTrabajadorSi.setSelected(true);
+        optTrabajadorNo.setSelected(false);
+    }//GEN-LAST:event_optTrabajadorSiMouseClicked
 
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarActionPerformed
+    private void optTrabajadorNoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optTrabajadorNoMouseClicked
+        optTrabajadorSi.setSelected(false);
+        optTrabajadorNo.setSelected(true);
+    }//GEN-LAST:event_optTrabajadorNoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -283,9 +322,12 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblTipodeVehiculo;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTrabajador;
     private javax.swing.JRadioButton optAutoCamioneta;
     private javax.swing.JRadioButton optCamion;
     private javax.swing.JRadioButton optMoto;
+    private javax.swing.JRadioButton optTrabajadorNo;
+    private javax.swing.JRadioButton optTrabajadorSi;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtPatente;

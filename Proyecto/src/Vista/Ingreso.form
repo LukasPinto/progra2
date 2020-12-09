@@ -52,40 +52,43 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnIngresar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="lblIngresar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblTipodeVehiculo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblModelo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblMarca" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="optAutoCamioneta" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTrabajador" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txtMarca" max="32767" attributes="0"/>
-                              <Component id="txtPatente" max="32767" attributes="0"/>
-                              <Component id="txtModelo" alignment="0" pref="164" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="optTrabajadorSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="optTrabajadorNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="optMoto" min="-2" pref="122" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="optCamion" min="-2" pref="122" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lblMarca" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblIngresar" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblModelo" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTipodeVehiculo" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtModelo" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="txtMarca" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="txtPatente" min="-2" pref="164" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="optAutoCamioneta" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="optMoto" min="-2" pref="122" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="optCamion" min="-2" pref="122" max="-2" attributes="0"/>
-                  <EmptySpace pref="33" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -109,15 +112,22 @@
                       <Component id="txtModelo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblModelo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblTipodeVehiculo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="optAutoCamioneta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="optMoto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="optCamion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="optAutoCamioneta" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="lblTrabajador" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="optTrabajadorNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="optTrabajadorSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnVolver" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -226,6 +236,30 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Tipo de Vehiculo:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTrabajador">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Trabajador:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="optTrabajadorSi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optTrabajadorSiMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="optTrabajadorNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optTrabajadorNoMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

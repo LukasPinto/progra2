@@ -177,7 +177,7 @@ public class Retiro extends javax.swing.JFrame {
                     .addComponent(optAutoCamioneta)
                     .addComponent(optMoto)
                     .addComponent(optCamion))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnRetirar))
