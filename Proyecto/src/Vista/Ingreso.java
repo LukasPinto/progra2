@@ -52,20 +52,22 @@ public class Ingreso extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitulo.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Ingresar Vehiculo");
 
-        lblIngresar.setForeground(new java.awt.Color(0, 0, 0));
         lblIngresar.setText("Ingrese la Patente:");
 
+        txtPatente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatenteActionPerformed(evt);
+            }
+        });
         txtPatente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPatenteKeyTyped(evt);
             }
         });
 
-        lblMarca.setForeground(new java.awt.Color(0, 0, 0));
         lblMarca.setText("Marca:");
 
         txtMarca.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -113,7 +115,6 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
-        lblModelo.setForeground(new java.awt.Color(0, 0, 0));
         lblModelo.setText("Modelo:");
 
         txtModelo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -122,10 +123,8 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
 
-        lblTipodeVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         lblTipodeVehiculo.setText("Tipo de Vehiculo:");
 
-        lblTrabajador.setForeground(new java.awt.Color(0, 0, 0));
         lblTrabajador.setText("Trabajador:");
 
         buttonGroup2.add(optTrabajadorSi);
@@ -243,7 +242,18 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_txtModeloKeyTyped
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
+        String patente ="";
+        patente=txtPatente.getText();
+        System.out.println(patente);
+        
+        String marca="";
+        marca=txtMarca.getText();
+        System.out.println(marca);
+        
+        String modelo="";
+        modelo=txtModelo.getText();
+        System.out.println(modelo);
+    
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -286,6 +296,10 @@ public class Ingreso extends javax.swing.JFrame {
         optTrabajadorSi.setSelected(false);
         optTrabajadorNo.setSelected(true);
     }//GEN-LAST:event_optTrabajadorNoMouseClicked
+
+    private void txtPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatenteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
