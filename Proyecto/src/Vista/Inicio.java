@@ -15,7 +15,11 @@ public class Inicio extends javax.swing.JFrame {
      * Creates new form Inicio
      */
     public Inicio() {
+        
+        Lista panelLista = new Lista();
+        Retiro panelRetiro = new Retiro();
         initComponents();
+        
     }
 
     /**
@@ -131,7 +135,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetirarActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
+        Ingreso panelIngreso = new Ingreso();
+        panelIngreso.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
