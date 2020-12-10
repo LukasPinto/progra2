@@ -16,7 +16,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         
-        Lista panelLista = new Lista();
+        
         Retiro panelRetiro = new Retiro();
         initComponents();
         
@@ -127,11 +127,15 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        // TODO add your handling code here:
+        Lista panelLista = new Lista();
+        panelLista.setVisible(true);
+        this.setVisible(false);   
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
-        // TODO add your handling code here:
+        Retiro panelRetirar = new Retiro();
+        panelRetirar.setVisible(true);
+        this.setVisible(false);        
     }//GEN-LAST:event_btnRetirarActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
