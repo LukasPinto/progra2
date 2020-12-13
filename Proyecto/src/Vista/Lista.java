@@ -36,7 +36,7 @@ public class Lista extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         btnGenerarLista = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

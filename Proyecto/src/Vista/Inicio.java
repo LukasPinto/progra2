@@ -129,19 +129,19 @@ public class Inicio extends javax.swing.JFrame {
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         Lista panelLista = new Lista();
         panelLista.setVisible(true);
-        this.setVisible(false);   
+        //this.setVisible(false);   
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
         Retiro panelRetirar = new Retiro();
         panelRetirar.setVisible(true);
-        this.setVisible(false);        
+        //this.setVisible(false);        
     }//GEN-LAST:event_btnRetirarActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Ingreso panelIngreso = new Ingreso();
         panelIngreso.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
