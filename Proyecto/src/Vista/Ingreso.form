@@ -84,24 +84,21 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                          <Component id="lblMarca" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="lblIngresar" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                                          <Component id="lblModelo" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="lblMarca" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblIngresar" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Component id="lblCarroceria" min="-2" max="-2" attributes="0"/>
                                                   <Component id="lblTipodeVehiculo" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                                  <Component id="lblModelo" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="txtModelo" pref="164" max="32767" attributes="0"/>
                                               <Component id="txtMarca" pref="164" max="32767" attributes="0"/>
@@ -139,12 +136,12 @@
                       <Component id="lblMarca" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtMarca" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblModelo" min="-2" max="-2" attributes="0"/>
                       <Component id="txtModelo" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblModelo" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCarroceria" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCarroceria" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -165,7 +162,7 @@
                       <Component id="optTrabajadorNo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="optTrabajadorSi" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="9" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnVolver" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIngresar" alignment="3" min="-2" max="-2" attributes="0"/>

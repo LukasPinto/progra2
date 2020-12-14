@@ -10,6 +10,12 @@ import Modelo.Auto;
 import Modelo.Camion;
 import Modelo.Camioneta;
 import Modelo.Moto;
+import java.awt.Color;
+import static java.awt.image.ImageObserver.WIDTH;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -202,17 +208,16 @@ public class Ingreso extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(lblMarca)
-                                                        .addComponent(lblIngresar))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(67, 67, 67)
-                                                        .addComponent(lblModelo)))
-                                                .addGap(32, 32, 32))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(lblMarca)
+                                                    .addComponent(lblIngresar))
+                                                .addGap(37, 37, 37))
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(lblCarroceria)
-                                                .addComponent(lblTipodeVehiculo)))
+                                                .addComponent(lblTipodeVehiculo))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGap(67, 67, 67)
+                                                .addComponent(lblModelo)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
@@ -239,11 +244,11 @@ public class Ingreso extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMarca)
                     .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblModelo)
-                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblModelo))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCarroceria)
                     .addComponent(txtCarroceria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,7 +266,7 @@ public class Ingreso extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(optTrabajadorNo)
                     .addComponent(optTrabajadorSi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnIngresar))
@@ -287,59 +292,62 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_txtModeloKeyTyped
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        Pattern pat = Pattern.compile("[A-Z]{2}[1-9]{1}[0-9]{3}");
+        Pattern pat2 = Pattern.compile("[B-Z]{4}[0-9]{2}");
+        Matcher mat = pat.matcher(txtPatente.getText().toUpperCase());
+        Matcher mat2 = pat2.matcher(txtPatente.getText().toUpperCase());
+        String patente = txtPatente.getText();
+        String marca = txtMarca.getText();
+        String modelo = txtModelo.getText();
+        String carroceria = txtCarroceria.getText();
+        if ((mat.find() || mat2.find())&& patente!="" && marca!="" && modelo!="" && carroceria!="") {
+            if (optAuto.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Auto auto = new Auto(carroceria, patente, marca, modelo, false);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(auto);
+                    System.out.println("Ingresado");
+                } else if (optTrabajadorSi.isSelected()) {
+                    Auto auto = new Auto(carroceria, patente, marca, modelo, true);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(auto);
+                }
+            } else if (optCamioneta.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
+                    System.out.println("Ingresado");
+                } else if (optTrabajadorSi.isSelected()) {
+                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, true);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
+                    System.out.println("Ingresado");
+                }
+            } else if (optMoto.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Moto moto = new Moto(carroceria, patente, marca, modelo, false);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(moto);
+                    System.out.println("Ingresado");
+                } else if (optTrabajadorSi.isSelected()) {
+                    Moto moto = new Moto(carroceria, patente, marca, modelo, true);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(moto);
+                    System.out.println("Ingresado");
+                }
+            } else if (optCamion.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Camion camion = new Camion(carroceria, patente, marca, modelo, false);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(camion);
+                    System.out.println("Ingresado");
+                } else if (optTrabajadorSi.isSelected()) {
+                    Camion camion = new Camion(carroceria, patente, marca, modelo, true);
+                    RegistroEstacionamiento.ingresarAutoCamioneta(camion);
+                    System.out.println("Ingresado");
+                }
+            }
 
-        String patente=txtPatente.getText();
-        String marca=txtMarca.getText();
-        String modelo=txtModelo.getText();
-        String carroceria=txtCarroceria.getText();
-        System.out.println(modelo);
-        if(optAuto.isSelected()){
-            if(optTrabajadorNo.isSelected()){
-                Auto auto=new Auto(carroceria, patente, marca, modelo, false);
-                RegistroEstacionamiento.ingresarAutoCamioneta(auto);
-                System.out.println("Ingresado");
-            }
-            else if(optTrabajadorSi.isSelected()){
-                 Auto auto=new Auto(carroceria, patente, marca, modelo, true);
-                RegistroEstacionamiento.ingresarAutoCamioneta(auto);
-            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Complete los campos necesarios.\nrevise el formato de la patente", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+
         }
-        else if(optCamioneta.isSelected()){
-            if(optTrabajadorNo.isSelected()){
-                Camioneta camioneta=new Camioneta(carroceria, patente, marca, modelo, false);
-                RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
-                System.out.println("Ingresado");
-            }
-            else if(optTrabajadorSi.isSelected()){
-                 Camioneta camioneta=new Camioneta(carroceria, patente, marca, modelo, true);
-                RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
-                System.out.println("Ingresado");
-            }
-        }
-        else if(optMoto.isSelected()){
-            if(optTrabajadorNo.isSelected()){
-                Moto moto=new Moto(carroceria, patente, marca, modelo, false);
-                RegistroEstacionamiento.ingresarAutoCamioneta(moto);
-                System.out.println("Ingresado");
-            }
-            else if(optTrabajadorSi.isSelected()){
-                  Moto moto=new Moto(carroceria, patente, marca, modelo, true);
-                RegistroEstacionamiento.ingresarAutoCamioneta(moto);
-                System.out.println("Ingresado");
-            }
-        }
-        else if(optCamion.isSelected()){
-            if(optTrabajadorNo.isSelected()){
-                Camion camion=new Camion(carroceria, patente, marca, modelo, false);
-                RegistroEstacionamiento.ingresarAutoCamioneta(camion);
-                System.out.println("Ingresado");
-            }
-            else if(optTrabajadorSi.isSelected()){
-                Camion camion=new Camion(carroceria, patente, marca, modelo, true);
-                RegistroEstacionamiento.ingresarAutoCamioneta(camion);
-                System.out.println("Ingresado");
-            }
-        }
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -370,7 +378,11 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMarcaKeyTyped
 
     private void txtPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatenteKeyTyped
-        // TODO add your handling code here:
+        txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.black, Color.black, Color.black, Color.black));
+        char letra = evt.getKeyChar();
+        if (txtPatente.getText().length() > 5) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtPatenteKeyTyped
 
     private void optTrabajadorSiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optTrabajadorSiMouseClicked
