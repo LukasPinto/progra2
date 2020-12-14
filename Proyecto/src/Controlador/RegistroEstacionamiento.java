@@ -64,15 +64,15 @@ public class RegistroEstacionamiento {
     }
 
     public static void ingresarAutoCamioneta(Vehiculo vehiculo) {
-        listaAutosCamionetas.add(vehiculo);
+        boolean add = listaAutosCamionetas.add(vehiculo);
     }
 
     public static void ingresarCamion(Camion camion) {
-        listaCamiones.add(camion);
+        boolean add = listaCamiones.add(camion);
     }
 
     public static void ingresarMoto(Moto moto) {
-        listaMotos.add(moto);
+        boolean add = listaMotos.add(moto);
     }
 
     public static void retirarAutoCamioneta(Vehiculo vehiculo) {
@@ -80,11 +80,11 @@ public class RegistroEstacionamiento {
     }
 
     public static void retirarCamion(Vehiculo camion) {
-        listaCamiones.remove(camion);
+        boolean remove = listaCamiones.remove(camion);
     }
 
     public static void retirarMoto(Vehiculo moto) {
-        listaMotos.remove(moto);
+        boolean remove = listaMotos.remove(moto);
     }
 
     public static boolean disponibilidadVehiculos() {

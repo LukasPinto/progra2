@@ -12,17 +12,18 @@ package Modelo;
 public class Camion extends Vehiculo {
 
     private String tipoCamion;
-    private String tamanoCamion;
+    
 
     public Camion() {
         super();
     }
 
-    public Camion(String tipoCamion, String tamanoCamion, String patente, String Marca, String modelo, boolean trabajador) {
+    public Camion(String tipoCamion, String patente, String Marca, String modelo, boolean trabajador) {
         super(patente, Marca, modelo, trabajador);
         this.tipoCamion = tipoCamion;
-        this.tamanoCamion = tamanoCamion;
     }
+
+   
 
    
 

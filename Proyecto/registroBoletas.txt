@@ -372,3 +372,37 @@ Valor horas totales : 12000
 Iva                 : 2280
 Descuento           : 2570 (0.02x8)
 A pagar             : 11710
+Patente: angel-1 marca: mercedes benz modeloasdfasdf
+hora de entrada: Sun Dec 13 19:20:54 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 4h 39m
+Valor hora: 2100
+Valor horas totales : 8400
+Iva                 : 1596
+Descuento           : 1599 (0.02x8)
+A pagar             : 8397
+Patente: asdf-32 marca: harley devitson modelor1
+hora de entrada: Sun Dec 13 19:20:54 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 4h 39m
+Valor hora: 1500
+Valor horas totales : 6000
+Iva                 : 1140
+Descuento           : 1142 (0.02x8)
+A pagar             : 5998
+Patente: acab-12 marca: Chevrolet modeloCorsa
+hora de entrada: Sun Dec 13 19:20:54 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 4h 39m
+Valor hora: 2000
+Valor horas totales : 8000
+vehiculo perteneciente a trabjador
+Patente: benjamin-1 marca: chevrolet modelobemz
+hora de entrada: Sun Dec 13 19:20:54 CLST 2020
+hora de salida: Tue Nov 24 23:59:59 CLST 2020
+Tiempo de estadia: 4h 39m
+Valor hora: 3000
+Valor horas totales : 12000
+Iva                 : 2280
+Descuento           : 2284 (0.02x8)
+A pagar             : 11996

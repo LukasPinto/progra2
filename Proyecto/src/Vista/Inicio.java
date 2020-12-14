@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.RegistroEstacionamiento;
+
 /**
  *
  * @author Benjamin
@@ -19,6 +21,7 @@ public class Inicio extends javax.swing.JFrame {
         
         Retiro panelRetiro = new Retiro();
         initComponents();
+        generarRegistro();
         
     }
 
@@ -143,7 +146,9 @@ public class Inicio extends javax.swing.JFrame {
         panelIngreso.setVisible(true);
         //this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
-
+    private void generarRegistro(){
+        new RegistroEstacionamiento();
+    }
     /**
      * @param args the command line arguments
      */
