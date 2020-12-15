@@ -1,0 +1,178 @@
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:32:01 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 25m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:41:36 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 18m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:44:14 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 15m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:44:48 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 14m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:45:35 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 14m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:49:30 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 10m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:49:44 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 10m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:49:46 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 10m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: ssss12 marca: a modeloa
+hora de entrada: Mon Dec 14 23:49:47 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 0h 10m
+Valor hora: 2000
+Valor horas totales : 2000
+Iva                 : 380
+Descuento           : 0 (0.02x0)
+A pagar             : 2380
+Patente: jkfg11 marca: Mazda modelo3
+hora de entrada: Mon Dec 14 23:57:48 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 59m
+Valor hora: 2000
+Valor horas totales : 46000
+Iva                 : 8740
+Descuento           : 51455 (0.02x46)
+A pagar             : 3285
+Patente: jkfg12 marca: Toyota modeloyaris
+hora de entrada: Mon Dec 14 23:58:24 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 59m
+Valor hora: 2000
+Valor horas totales : 46000
+vehiculo perteneciente a trabjador
+Patente: jkfg13 marca: yamaha modelofg14
+hora de entrada: Mon Dec 14 23:58:55 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 59m
+Valor hora: 2000
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: jkfg13 marca: yamaha modelofg14
+hora de entrada: Tue Dec 15 00:00:52 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 59m
+Valor hora: 2000
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: jkfg11 marca: mazda modelorx7
+hora de entrada: Tue Dec 15 00:02:43 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 56m
+Valor hora: 2000
+Valor horas totales : 46000
+Iva                 : 8740
+Descuento           : 51455 (0.02x46)
+A pagar             : 3285
+Patente: jkfg13 marca: mazda modelorx7
+hora de entrada: Tue Dec 15 00:02:55 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 56m
+Valor hora: 1500
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: jkfg14 marca: mazda modelorx7
+hora de entrada: Tue Dec 15 00:03:00 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 56m
+Valor hora: 1500
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: ssss13 marca: a modeloa
+hora de entrada: Tue Dec 15 00:06:15 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 53m
+Valor hora: 1500
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: ssss13 marca: a modeloa
+hora de entrada: Tue Dec 15 00:06:33 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 53m
+Valor hora: 1500
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: ssss13 marca: a modeloa
+hora de entrada: Tue Dec 15 00:06:37 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 53m
+Valor hora: 1500
+Valor horas totales : 34500
+Iva                 : 6555
+Descuento           : 38591 (0.02x46)
+A pagar             : 2464
+Patente: ssss12 marca: a modeloa
+hora de entrada: Tue Dec 15 00:05:50 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 53m
+Valor hora: 2000
+Valor horas totales : 46000
+Iva                 : 8740
+Descuento           : 51455 (0.02x46)
+A pagar             : 3285

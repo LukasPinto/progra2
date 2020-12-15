@@ -339,21 +339,21 @@ public class Ingreso extends javax.swing.JFrame {
             } else if (optMoto.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Moto moto = new Moto(carroceria, patente, marca, modelo, false);
-                    RegistroEstacionamiento.ingresarAutoCamioneta(moto);
+                    RegistroEstacionamiento.ingresarMoto(moto);
                     System.out.println("Ingresado");
                 } else if (optTrabajadorSi.isSelected()) {
                     Moto moto = new Moto(carroceria, patente, marca, modelo, true);
-                    RegistroEstacionamiento.ingresarAutoCamioneta(moto);
+                    RegistroEstacionamiento.ingresarMoto(moto);
                     System.out.println("Ingresado");
                 }
             } else if (optCamion.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Camion camion = new Camion(carroceria, patente, marca, modelo, false);
-                    RegistroEstacionamiento.ingresarAutoCamioneta(camion);
+                    RegistroEstacionamiento.ingresarCamion(camion);
                     System.out.println("Ingresado");
                 } else if (optTrabajadorSi.isSelected()) {
                     Camion camion = new Camion(carroceria, patente, marca, modelo, true);
-                    RegistroEstacionamiento.ingresarAutoCamioneta(camion);
+                    RegistroEstacionamiento.ingresarCamion(camion);
                     System.out.println("Ingresado");
                 }
             }

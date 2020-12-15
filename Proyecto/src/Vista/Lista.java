@@ -5,6 +5,19 @@
  */
 package Vista;
 
+import Controlador.RegistroEstacionamiento;
+import static Controlador.RegistroEstacionamiento.getCalendar;
+import Modelo.Vehiculo;
+import java.awt.Color;
+import static java.awt.image.ImageObserver.WIDTH;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Benjamin
@@ -35,6 +48,7 @@ public class Lista extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         btnVolver = new javax.swing.JButton();
         btnGenerarLista = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -96,6 +110,10 @@ public class Lista extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("?");
+        jLabel2.setToolTipText("<html>\n<p>Ejemplo de patente:</p>\n<p>BBBB10</p>\n<p>BB1010</p>\n");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,6 +129,8 @@ public class Lista extends javax.swing.JFrame {
                         .addComponent(lblBuscarPantente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscarPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -124,13 +144,14 @@ public class Lista extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(lblTituloLista)
-                .addGap(42, 42, 42)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscarPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBuscarPantente))
+                    .addComponent(lblBuscarPantente)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerarLista)
                     .addComponent(btnVolver))
@@ -152,11 +173,41 @@ public class Lista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtBuscarPatenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPatenteKeyTyped
-        // TODO add your handling code here:
+        txtBuscarPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.black, Color.black, Color.black, Color.black));
+        char letra = evt.getKeyChar();
+        if (txtBuscarPatente.getText().length() > 5) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtBuscarPatenteKeyTyped
 
     private void btnGenerarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarListaActionPerformed
-        // TODO add your handling code here:
+        Pattern pat = Pattern.compile("[A-Z]{2}[1-9]{1}[0-9]{3}");
+        Pattern pat2 = Pattern.compile("[B-Z]{4}[0-9]{2}");
+        Matcher mat = pat.matcher(txtBuscarPatente.getText().toUpperCase());
+        Matcher mat2 = pat2.matcher(txtBuscarPatente.getText().toUpperCase());
+        if (mat.find() || mat2.find()) {
+            if (RegistroEstacionamiento.filtrarPatente(txtBuscarPatente.getText()) == null) {
+                JOptionPane.showMessageDialog(this, "Patente no econtrada", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                txtBuscarPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+            } else {
+                DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+                modelo.setRowCount(0); //limpiar tabla
+                Vehiculo vehiculo = RegistroEstacionamiento.filtrarPatente(txtBuscarPatente.getText());
+                vehiculo.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+                Calendar a = getCalendar(vehiculo.getHoraIngreso());
+                Calendar b = getCalendar(vehiculo.getHoraSalida());
+                int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+                int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+                int minutosTotales = horas * 60 + minutos;
+                int horasContabilizadas = (int) (minutosTotales / 60); // Se toman en cuenta las exactas que estuvo para el calculo
+                minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
+                String tiempoEstacionado=horasContabilizadas+"h"+" "+minutosTotales;
+                modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(),vehiculo.getModelo(),tiempoEstacionado});
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Formato incorrecto o \nVehiculo no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            txtBuscarPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+        }
     }//GEN-LAST:event_btnGenerarListaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -168,6 +219,7 @@ public class Lista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarLista;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

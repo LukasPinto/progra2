@@ -397,7 +397,14 @@ public class Retiro extends javax.swing.JFrame {
         String modelo = txtModelo.getText();
         String carroceria = txtCarroceria.getText();
         if ((mat.find() || mat2.find()) && patente != "" && marca != "" && modelo != "" && carroceria != "") {
-            if (optAuto.isSelected()) {
+            Auto aux1=new Auto(carroceria, patente, marca, modelo, true);
+            Camion aux2=new Camion(carroceria, patente, marca, modelo, false);
+            Moto aux3 = new Moto(carroceria, patente, marca, modelo, true);
+            if(!(RegistroEstacionamiento.validarAutoCamioneta(aux1) || RegistroEstacionamiento.validarMoto(aux3) || RegistroEstacionamiento.validarCamion(aux2))){
+                JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+            }
+            else if (optAuto.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, false);
                     try {
