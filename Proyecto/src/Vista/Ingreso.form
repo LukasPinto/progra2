@@ -105,6 +105,8 @@
                                               <Component id="txtPatente" pref="164" max="32767" attributes="0"/>
                                               <Component id="txtCarroceria" alignment="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel2" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -130,6 +132,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPatente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -162,7 +165,7 @@
                       <Component id="optTrabajadorNo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="optTrabajadorSi" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnVolver" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -314,6 +317,15 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCarroceria">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="?"/>
+            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt;Ejemplo de patente:&lt;/p&gt;&#xa;&lt;p&gt;BB-BB-10&lt;/p&gt;"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
