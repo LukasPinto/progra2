@@ -178,7 +178,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("?");
-        jLabel2.setToolTipText("<html>\n<p>Ejemplo de patente:</p>\n<p>BB-BB-10</p>");
+        jLabel2.setToolTipText("<html>\n<p>Ejemplo de patente:</p>\n<p>BBBB10</p>\n<p>BB1010</p>\n");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

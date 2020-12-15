@@ -324,7 +324,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="?"/>
-            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt;Ejemplo de patente:&lt;/p&gt;&#xa;&lt;p&gt;BB-BB-10&lt;/p&gt;"/>
+            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt;Ejemplo de patente:&lt;/p&gt;&#xa;&lt;p&gt;BBBB10&lt;/p&gt;&#xa;&lt;p&gt;BB1010&lt;/p&gt;&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>
