@@ -17,15 +17,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
 /**
  *
  * @author Benjamin
  */
 public class RegistroEstacionamiento {
 
-    static  List<Camion> listaCamiones;
-    static  List<Vehiculo> listaAutosCamionetas;
-    static  List<Moto> listaMotos;
+    static List<Camion> listaCamiones;
+    static List<Vehiculo> listaAutosCamionetas;
+    static List<Moto> listaMotos;
     static int cantBoletasMotos;
     static int cantBoletasCamiones;
     static int cantBoletasAutosCamionetas;
@@ -66,40 +67,51 @@ public class RegistroEstacionamiento {
     public static boolean ingresarAutoCamioneta(Vehiculo vehiculo) {
         return listaAutosCamionetas.add(vehiculo);
     }
-    public static boolean ingresarAutoCamioneta(Auto auto){
+
+    public static boolean ingresarAutoCamioneta(Auto auto) {
         return listaAutosCamionetas.add(auto);
     }
-    public static boolean ingresarAutoCamioneta(Camioneta camioneta){
+
+    public static boolean ingresarAutoCamioneta(Camioneta camioneta) {
         return listaAutosCamionetas.add(camioneta);
     }
 
     public static boolean ingresarCamion(Camion camion) {
         return listaCamiones.add(camion);
     }
-    
 
     public static boolean ingresarMoto(Moto moto) {
         return listaMotos.add(moto);
     }
 
-    public static boolean retirarAutoCamioneta(Vehiculo vehiculo) {   
-        int index=0;
-         for (Vehiculo listaCamione : listaAutosCamionetas) {
-            if(vehiculo.patente==listaCamione.patente ){
-                index=listaAutosCamionetas.indexOf(listaCamione);
+    public static boolean retirarAutoCamioneta(Vehiculo vehiculo) {
+        int index = 0;
+        for (Vehiculo listaCamione : listaAutosCamionetas) {
+            if (vehiculo.patente == listaCamione.patente) {
+                index = listaAutosCamionetas.indexOf(listaCamione);
             }
         }
-         return listaAutosCamionetas.remove(listaAutosCamionetas.get(index));
+        return listaAutosCamionetas.remove(listaAutosCamionetas.get(index));
     }
-    
-    
 
     public static boolean retirarCamion(Camion camion) {
-        return listaCamiones.remove(camion);
+        int index = 0;
+        for (Camion listaCamione : listaCamiones) {
+            if (camion.patente == listaCamione.patente) {
+                index = listaCamiones.indexOf(listaCamione);
+            }
+        }
+        return listaCamiones.remove(listaCamiones.get(index));
     }
 
     public static boolean retirarMoto(Moto moto) {
-        return listaMotos.remove(moto);
+        int index = 0;
+        for (Moto listaMoto : listaMotos) {
+            if (moto.patente == listaMoto.patente) {
+                index = listaMotos.indexOf(listaMoto);
+            }
+        }
+        return listaMotos.remove(listaMotos.get(index));
     }
 
     public static boolean disponibilidadVehiculos() {
@@ -134,20 +146,30 @@ public class RegistroEstacionamiento {
     public static List getListaMotos() {
         return RegistroEstacionamiento.listaMotos;
     }
-    public static void vaciarListaMotos(){
+
+    public static void vaciarListaMotos() {
         RegistroEstacionamiento.listaMotos.clear();
     }
-    public static void vaciarListaCamiones(){
+
+    public static void vaciarListaCamiones() {
         RegistroEstacionamiento.listaCamiones.clear();
     }
-    public static void vaciarListaAutoCamionetas(){
+
+    public static void vaciarListaAutoCamionetas() {
         RegistroEstacionamiento.listaAutosCamionetas.clear();
     }
-    
 
     public static void generarBoletaAutoCamionetas(Vehiculo vehiculo) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        listaAutosCamionetas.get(listaAutosCamionetas.indexOf(vehiculo)).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+        int index = 0;
+        for (Vehiculo vehiculo1 : listaAutosCamionetas) {
+            if (vehiculo.patente == vehiculo1.patente) {
+                index = listaAutosCamionetas.indexOf(vehiculo1);
+            }
+        }
+        vehiculo.setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
+        listaAutosCamionetas.get(index).setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
+        
         Calendar a = getCalendar(vehiculo.getHoraIngreso());
         Calendar b = getCalendar(vehiculo.getHoraSalida());
         int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
@@ -155,13 +177,9 @@ public class RegistroEstacionamiento {
         int minutosTotales = horas * 60 + minutos;
         ArchivoEstacionamiento n = new ArchivoEstacionamiento();
         String BoletaArchivo;
-        int index=0;
+
         minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
-        for (Vehiculo vehiculo1 : listaAutosCamionetas) {
-            if(vehiculo.patente==vehiculo1.patente){
-                index=listaAutosCamionetas.indexOf(vehiculo1);
-            }
-        }
+
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
         if (listaAutosCamionetas.get(index).trabajador) {
 
@@ -189,16 +207,24 @@ public class RegistroEstacionamiento {
 
     public static void generarBoletaCamion(Camion camion) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        listaCamiones.get(listaCamiones.indexOf(camion)).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+        int index = 0;
+        for (Camion camion1 : listaCamiones) {
+            if (camion.patente == camion1.patente) {
+                index = listaCamiones.indexOf(camion1);
+            }
+        }
+        camion.setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
+        listaCamiones.get(index).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+        camion.setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
         Calendar a = getCalendar(camion.getHoraIngreso());
         Calendar b = getCalendar(camion.getHoraSalida());
-       
+
         int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
         int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
         int minutosTotales = horas * 60 + minutos;
         minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
-        String BoletaArchivo = "Patente: " + listaCamiones.get(listaCamiones.indexOf(camion)).patente + " marca: " + listaCamiones.get(listaCamiones.indexOf(camion)).Marca + " modelo" + listaCamiones.get(listaCamiones.indexOf(camion)).modelo + "\nhora de entrada: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaIngreso + "\nhora de salida: " + listaCamiones.get(listaCamiones.indexOf(camion)).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_CAMION + "\nValor horas totales : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaCamiones.get(listaCamiones.indexOf(camion)).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaCamiones.get(listaCamiones.indexOf(camion)).obtenerTotal(minutosTotales, horasContabilizadas);
+        String BoletaArchivo = "Patente: " + listaCamiones.get(index).patente + " marca: " + listaCamiones.get(index).Marca + " modelo" + listaCamiones.get(index).modelo + "\nhora de entrada: " + listaCamiones.get(index).horaIngreso + "\nhora de salida: " + listaCamiones.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_CAMION + "\nValor horas totales : " + listaCamiones.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaCamiones.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaCamiones.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaCamiones.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
         ArchivoEstacionamiento n = new ArchivoEstacionamiento();
         n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
         retirarCamion(camion);
@@ -208,7 +234,13 @@ public class RegistroEstacionamiento {
 
     public static void generarBoletaMotos(Moto moto) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        listaMotos.get(listaMotos.indexOf(moto)).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+        int index = 0;
+        for (Moto moto1 : listaMotos) {
+            if (moto1.patente == moto.patente) {
+                index = listaCamiones.indexOf(moto1);
+            }
+        }
+        listaMotos.get(index).setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
         Calendar a = getCalendar(moto.getHoraIngreso());
         Calendar b = getCalendar(moto.getHoraSalida());
         int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));

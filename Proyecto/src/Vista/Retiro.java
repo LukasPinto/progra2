@@ -176,7 +176,7 @@ public class Retiro extends javax.swing.JFrame {
             }
         });
 
-        btnRetirar.setText("Ingresar");
+        btnRetirar.setText("Retirar");
         btnRetirar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetirarActionPerformed(evt);
@@ -393,47 +393,85 @@ public class Retiro extends javax.swing.JFrame {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, false);
                     try {
                         //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
+
                         RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
+                        System.out.println("Hola");
                     } catch (IOException ex) {
                         Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                }else{
-                     Auto auto = new Auto(carroceria, patente, marca, modelo, true);
+                } else {
+                    Auto auto = new Auto(carroceria, patente, marca, modelo, true);
+
+                    try {
+                        //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
+
+                        RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     if (RegistroEstacionamiento.retirarAutoCamioneta(auto)) {
                         System.out.println("Retirado");
                     }
                 }
-            }
-                 else if (optCamioneta.isSelected()) {
-                    if (optTrabajadorNo.isSelected()) {
-                        Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, true);
-                        RegistroEstacionamiento.retirarAutoCamioneta(camioneta);
-                        if (RegistroEstacionamiento.retirarAutoCamioneta(camioneta)) {
-                            System.out.println("Retirado");
-                        }
-
+            } else if (optCamioneta.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaAutoCamionetas(camioneta);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                 } else if (optMoto.isSelected()) {
-                        if (optTrabajadorNo.isSelected()) {
-                            Moto moto = new Moto(carroceria, patente, marca, modelo, false);
-                            RegistroEstacionamiento.retirarMoto(moto);
-                            if (RegistroEstacionamiento.retirarAutoCamioneta(moto)) {
-                                System.out.println("Retirado");
-                            
 
-                        }
-                    } else if (optCamion.isSelected()) {
-                        if (optTrabajadorNo.isSelected()) {
-                            Camion camion = new Camion(carroceria, patente, marca, modelo, false);
-                            RegistroEstacionamiento.retirarCamion(camion);
-                            if (RegistroEstacionamiento.retirarAutoCamioneta(camion)) {
-                                System.out.println("Retirado");
-                            }
-                        }
+                } else {
+                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaAutoCamionetas(camioneta);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            } else if (optMoto.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Moto moto = new Moto(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaMotos(moto);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    Moto moto = new Moto(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaMotos(moto);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            } else if (optCamion.isSelected()) {
+                if (optTrabajadorNo.isSelected()) {
+                    Camion camion = new Camion(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaCamion(camion);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    Camion camion = new Camion(carroceria, patente, marca, modelo, false);
+                    try {
+                        RegistroEstacionamiento.generarBoletaCamion(camion);
+                        System.out.println("Hola");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 }
-            
+            }
+
         } else {
             JOptionPane.showMessageDialog(this, "Complete los campos necesarios.\nrevise el formato de la patente", "Advertencia", JOptionPane.WARNING_MESSAGE);
             txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));

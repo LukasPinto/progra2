@@ -342,7 +342,8 @@ public class Ingreso extends javax.swing.JFrame {
                 }
             }
 
-        } else {
+        } 
+        else {
             JOptionPane.showMessageDialog(this, "Complete los campos necesarios.\nrevise el formato de la patente", "Advertencia", JOptionPane.WARNING_MESSAGE);
             txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
 
