@@ -321,41 +321,42 @@ public class Ingreso extends javax.swing.JFrame {
                 if (optTrabajadorNo.isSelected()) {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, false);
                     RegistroEstacionamiento.ingresarAutoCamioneta(auto);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 } else if (optTrabajadorSi.isSelected()) {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarAutoCamioneta(auto);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 }
             } else if (optCamioneta.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
                     RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 } else if (optTrabajadorSi.isSelected()) {
                     Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarAutoCamioneta(camioneta);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 }
             } else if (optMoto.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Moto moto = new Moto(carroceria, patente, marca, modelo, false);
                     RegistroEstacionamiento.ingresarMoto(moto);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 } else if (optTrabajadorSi.isSelected()) {
                     Moto moto = new Moto(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarMoto(moto);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 }
             } else if (optCamion.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
                     Camion camion = new Camion(carroceria, patente, marca, modelo, false);
                     RegistroEstacionamiento.ingresarCamion(camion);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
+
                 } else if (optTrabajadorSi.isSelected()) {
                     Camion camion = new Camion(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarCamion(camion);
-                    System.out.println("Ingresado");
+                    LimpiarIngreso();
                 }
             }
 
@@ -424,7 +425,21 @@ public class Ingreso extends javax.swing.JFrame {
     private void optMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optMotoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_optMotoActionPerformed
-
+    
+    void LimpiarIngreso(){
+        JOptionPane.showMessageDialog(this, "VEHICULO INGRESADO CORRECTAMENTE", "Ingreso Completado", JOptionPane.INFORMATION_MESSAGE);
+        System.out.println("Ingresado");
+        txtMarca.setText(null);
+        txtModelo.setText(null);
+        txtPatente.setText(null);
+        txtCarroceria.setText(null);
+        optTrabajadorSi.setSelected(false);
+        optTrabajadorNo.setSelected(true);
+        optAuto.setSelected(true);
+        optCamioneta.setSelected(false);
+        optCamion.setSelected(false);
+        optMoto.setSelected(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;

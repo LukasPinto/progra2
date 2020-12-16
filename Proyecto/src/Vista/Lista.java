@@ -217,6 +217,7 @@ public class Lista extends javax.swing.JFrame {
                 minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
                 String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
                 modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(), vehiculo.getModelo(), tiempoEstacionado});
+                LimpiarParametroLista();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Formato incorrecto o \nVehiculo no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -246,7 +247,8 @@ public class Lista extends javax.swing.JFrame {
             minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
             String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
             modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(), vehiculo.getModelo(), tiempoEstacionado});
-        }
+            
+        }LimpiarParametroLista();
         for (Moto moto : listaMotos) {
             moto.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
             Calendar a = getCalendar(moto.getHoraIngreso());
@@ -258,7 +260,7 @@ public class Lista extends javax.swing.JFrame {
             minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
             String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
             modelo.addRow(new Object[]{moto.getPatente(), moto.getMarca(), moto.getModelo(), tiempoEstacionado});
-        }
+        }LimpiarParametroLista();
         for (Camion camion : listaCamiones) {
             camion.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
             Calendar a = getCalendar(camion.getHoraIngreso());
@@ -270,10 +272,12 @@ public class Lista extends javax.swing.JFrame {
             minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
             String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
             modelo.addRow(new Object[]{camion.getPatente(), camion.getMarca(), camion.getModelo(), tiempoEstacionado});
-        }
+        }LimpiarParametroLista();
         
     }//GEN-LAST:event_btnListarTodosActionPerformed
-
+    void LimpiarParametroLista(){
+        txtBuscarPatente.setText(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFiltrarPatente;

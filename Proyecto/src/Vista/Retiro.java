@@ -281,7 +281,7 @@ public class Retiro extends javax.swing.JFrame {
 
                         registro=RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
                         if(registro){
-                            System.out.println("Retirado");
+                            LimpiarRetiro();
                         }
                         else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -296,7 +296,7 @@ public class Retiro extends javax.swing.JFrame {
                     try {
                         registro=RegistroEstacionamiento.generarBoletaMotos(moto);
                         if(registro){
-                            System.out.println("Retirado");
+                            LimpiarRetiro();
                         }
                         else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -310,7 +310,7 @@ public class Retiro extends javax.swing.JFrame {
                     try {
                         registro=RegistroEstacionamiento.generarBoletaCamion(camion);
                         if(registro){
-                            System.out.println("Retirado");
+                            LimpiarRetiro();
                         }
                         else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -326,7 +326,14 @@ public class Retiro extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btnRetirarActionPerformed
-
+    void LimpiarRetiro(){
+        JOptionPane.showMessageDialog(this, "VEHICULO RETIRADO CORRECTAMENTE", "Retiro Completado", JOptionPane.INFORMATION_MESSAGE);
+        txtPatente.setText(null);
+        optCamion.setSelected(false);
+        optMoto.setSelected(false);
+        optAutoCamioneta.setSelected(true);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetirar;
     private javax.swing.JButton btnVolver;
