@@ -7,11 +7,14 @@ package Vista;
 
 import Controlador.RegistroEstacionamiento;
 import static Controlador.RegistroEstacionamiento.getCalendar;
+import Modelo.Camion;
+import Modelo.Moto;
 import Modelo.Vehiculo;
 import java.awt.Color;
 import static java.awt.image.ImageObserver.WIDTH;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
@@ -49,6 +52,7 @@ public class Lista extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         btnGenerarLista = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnListarTodos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -103,7 +107,7 @@ public class Lista extends javax.swing.JFrame {
             }
         });
 
-        btnGenerarLista.setText("Generar Lista");
+        btnGenerarLista.setText("Filtrar Patente");
         btnGenerarLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarListaActionPerformed(evt);
@@ -113,6 +117,13 @@ public class Lista extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("?");
         jLabel2.setToolTipText("<html>\n<p>Ejemplo de patente:</p>\n<p>BBBB10</p>\n<p>BB1010</p>\n");
+
+        btnListarTodos.setText("Listar Todos");
+        btnListarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarTodosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,6 +146,8 @@ public class Lista extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74)
+                        .addComponent(btnListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnGenerarLista)))
                 .addContainerGap())
@@ -154,7 +167,8 @@ public class Lista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerarLista)
-                    .addComponent(btnVolver))
+                    .addComponent(btnVolver)
+                    .addComponent(btnListarTodos))
                 .addContainerGap())
         );
 
@@ -201,8 +215,8 @@ public class Lista extends javax.swing.JFrame {
                 int minutosTotales = horas * 60 + minutos;
                 int horasContabilizadas = (int) (minutosTotales / 60); // Se toman en cuenta las exactas que estuvo para el calculo
                 minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
-                String tiempoEstacionado=horasContabilizadas+"h"+" "+minutosTotales;
-                modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(),vehiculo.getModelo(),tiempoEstacionado});
+                String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
+                modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(), vehiculo.getModelo(), tiempoEstacionado});
             }
         } else {
             JOptionPane.showMessageDialog(this, "Formato incorrecto o \nVehiculo no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -215,9 +229,55 @@ public class Lista extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    private void btnListarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarTodosActionPerformed
+        List<Vehiculo> listaAutosCamionetas = RegistroEstacionamiento.getListaAutosCamiones();
+        List<Camion> listaCamiones=RegistroEstacionamiento.getListaCamiones();
+        List<Moto> listaMotos=RegistroEstacionamiento.getListaMotos();
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0); //limpiar tabla
+        for (Vehiculo vehiculo : listaAutosCamionetas) {
+            vehiculo.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+            Calendar a = getCalendar(vehiculo.getHoraIngreso());
+            Calendar b = getCalendar(vehiculo.getHoraSalida());
+            int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+            int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+            int minutosTotales = horas * 60 + minutos;
+            int horasContabilizadas = (int) (minutosTotales / 60); // Se toman en cuenta las exactas que estuvo para el calculo
+            minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
+            String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
+            modelo.addRow(new Object[]{vehiculo.getPatente(), vehiculo.getMarca(), vehiculo.getModelo(), tiempoEstacionado});
+        }
+        for (Moto moto : listaMotos) {
+            moto.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+            Calendar a = getCalendar(moto.getHoraIngreso());
+            Calendar b = getCalendar(moto.getHoraSalida());
+            int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+            int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+            int minutosTotales = horas * 60 + minutos;
+            int horasContabilizadas = (int) (minutosTotales / 60); // Se toman en cuenta las exactas que estuvo para el calculo
+            minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
+            String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
+            modelo.addRow(new Object[]{moto.getPatente(), moto.getMarca(), moto.getModelo(), tiempoEstacionado});
+        }
+        for (Camion camion : listaCamiones) {
+            camion.setHoraSalida(new Date(120, 10, 24, 23, 59, 59));
+            Calendar a = getCalendar(camion.getHoraIngreso());
+            Calendar b = getCalendar(camion.getHoraSalida());
+            int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
+            int minutos = b.get(Calendar.MINUTE) - a.get(Calendar.MINUTE);
+            int minutosTotales = horas * 60 + minutos;
+            int horasContabilizadas = (int) (minutosTotales / 60); // Se toman en cuenta las exactas que estuvo para el calculo
+            minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
+            String tiempoEstacionado = horasContabilizadas + "h" + " " + minutosTotales;
+            modelo.addRow(new Object[]{camion.getPatente(), camion.getMarca(), camion.getModelo(), tiempoEstacionado});
+        }
+        
+    }//GEN-LAST:event_btnListarTodosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarLista;
+    private javax.swing.JButton btnListarTodos;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

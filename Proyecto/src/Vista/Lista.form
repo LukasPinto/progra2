@@ -62,6 +62,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnVolver" min="-2" pref="107" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="btnListarTodos" min="-2" pref="122" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnGenerarLista" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -87,6 +89,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnGenerarLista" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnVolver" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnListarTodos" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -177,7 +180,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGenerarLista">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Generar Lista"/>
+            <Property name="text" type="java.lang.String" value="Filtrar Patente"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarListaActionPerformed"/>
@@ -191,6 +194,14 @@
             <Property name="text" type="java.lang.String" value="?"/>
             <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt;Ejemplo de patente:&lt;/p&gt;&#xa;&lt;p&gt;BBBB10&lt;/p&gt;&#xa;&lt;p&gt;BB1010&lt;/p&gt;&#xa;"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnListarTodos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Listar Todos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarTodosActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
