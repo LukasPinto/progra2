@@ -54,9 +54,6 @@ public class Retiro extends javax.swing.JFrame {
         optCamion = new javax.swing.JRadioButton();
         btnVolver = new javax.swing.JButton();
         btnRetirar = new javax.swing.JButton();
-        lblTrabajador = new javax.swing.JLabel();
-        optTrabajadorNo = new javax.swing.JRadioButton();
-        optTrabajadorSi = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -136,20 +133,6 @@ public class Retiro extends javax.swing.JFrame {
             }
         });
 
-        lblTrabajador.setText("Trabajador:");
-
-        buttonGroup2.add(optTrabajadorNo);
-        optTrabajadorNo.setSelected(true);
-        optTrabajadorNo.setText("No");
-
-        buttonGroup2.add(optTrabajadorSi);
-        optTrabajadorSi.setText("Si");
-        optTrabajadorSi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optTrabajadorSiActionPerformed(evt);
-            }
-        });
-
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("?");
         jLabel2.setToolTipText("<html>\n<p>Ejemplo de patente:</p>\n<p>BBBB10</p>\n<p>BB1010</p>\n");
@@ -174,26 +157,19 @@ public class Retiro extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(28, 28, 28)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblTrabajador)
-                                            .addComponent(lblIngresar))
-                                        .addGap(50, 50, 50)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(optTrabajadorSi)
-                                                .addGap(39, 39, 39)
-                                                .addComponent(optTrabajadorNo))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(lblIngresar))
+                                    .addComponent(optAutoCamioneta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(optAutoCamioneta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(46, 46, 46)
+                                        .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(optMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(55, 55, 55)
+                                        .addGap(59, 59, 59)
                                         .addComponent(optCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 60, Short.MAX_VALUE)))))
+                                .addGap(0, 68, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -205,18 +181,12 @@ public class Retiro extends javax.swing.JFrame {
                     .addComponent(lblIngresar)
                     .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGap(89, 89, 89)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(optAutoCamioneta)
                     .addComponent(optMoto)
                     .addComponent(optCamion))
-                .addGap(18, 18, 18)
-                .addComponent(lblTrabajador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(optTrabajadorNo)
-                    .addComponent(optTrabajadorSi))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnRetirar))
@@ -286,7 +256,7 @@ public class Retiro extends javax.swing.JFrame {
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
         Pattern pat = Pattern.compile("[A-Z]{2}[1-9]{1}[0-9]{3}");
-        Pattern pat2 = Pattern.compile("[B-Z]{4}[0-9]{2}");
+        Pattern pat2 = Pattern.compile("[A-Z]{4}[0-9]{2}");
         Matcher mat = pat.matcher(txtPatente.getText().toUpperCase());
         Matcher mat2 = pat2.matcher(txtPatente.getText().toUpperCase());
         String patente = txtPatente.getText();
@@ -309,12 +279,13 @@ public class Retiro extends javax.swing.JFrame {
                     try {
                         //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
 
-                        registro=RegistroEstacionamiento.generarBoletaAutoCamionetas(vehiculo);
+                        registro=RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
                         if(registro){
                             System.out.println("Retirado");
                         }
-                        else{
+                        else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                            
                         }
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -327,7 +298,7 @@ public class Retiro extends javax.swing.JFrame {
                         if(registro){
                             System.out.println("Retirado");
                         }
-                        else{
+                        else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
                         }
                     } catch (IOException ex) {
@@ -341,7 +312,7 @@ public class Retiro extends javax.swing.JFrame {
                         if(registro){
                             System.out.println("Retirado");
                         }
-                        else{
+                        else if(!(registro)){
                             JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
                         }
                     } catch (IOException ex) {
@@ -356,10 +327,6 @@ public class Retiro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRetirarActionPerformed
 
-    private void optTrabajadorSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optTrabajadorSiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_optTrabajadorSiActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetirar;
     private javax.swing.JButton btnVolver;
@@ -369,12 +336,9 @@ public class Retiro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblIngresar;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTrabajador;
     private javax.swing.JRadioButton optAutoCamioneta;
     private javax.swing.JRadioButton optCamion;
     private javax.swing.JRadioButton optMoto;
-    private javax.swing.JRadioButton optTrabajadorNo;
-    private javax.swing.JRadioButton optTrabajadorSi;
     private javax.swing.JTextField txtPatente;
     // End of variables declaration//GEN-END:variables
 }

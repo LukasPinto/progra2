@@ -6,6 +6,16 @@
 package Vista;
 
 import Controlador.RegistroEstacionamiento;
+import static Controlador.RegistroEstacionamiento.getCalendar;
+import Modelo.Camion;
+import Modelo.Moto;
+import Modelo.Vehiculo;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -40,13 +50,13 @@ public class Inicio extends javax.swing.JFrame {
         btnRetirar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        btnCerrarEstacionamiento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitulo.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Bienvenido a \"Estacionamiento Angel Araya\"");
 
@@ -78,23 +88,33 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnCerrarEstacionamiento.setText("Cerrar Estacionamiento");
+        btnCerrarEstacionamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarEstacionamientoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnIngresar)
-                .addGap(18, 18, 18)
-                .addComponent(btnRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCerrarEstacionamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRetirar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,9 +126,14 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(btnListar)
                     .addComponent(btnRetirar)
                     .addComponent(btnIngresar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnExit)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnExit)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnCerrarEstacionamiento)
+                        .addGap(20, 20, 20))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,6 +171,43 @@ public class Inicio extends javax.swing.JFrame {
         panelIngreso.setVisible(true);
         //this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void btnCerrarEstacionamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarEstacionamientoActionPerformed
+        List<Vehiculo> listaAutosCamionetas = RegistroEstacionamiento.getListaAutosCamiones();
+        List<Camion> listaCamiones=RegistroEstacionamiento.getListaCamiones();
+        List<Moto> listaMotos=RegistroEstacionamiento.getListaMotos();
+        if(!listaAutosCamionetas.isEmpty()){
+            for (Vehiculo vehiculo : listaAutosCamionetas) {
+            try {
+                RegistroEstacionamiento.cerrarEstacionaminet(vehiculo);
+                break;
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
+        else if(!listaMotos.isEmpty()){
+             for (Moto moto : listaMotos) {
+            try {
+                RegistroEstacionamiento.cerrarEstacionaminet(moto);
+                break;
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
+        else if(!listaCamiones.isEmpty()){
+           for (Camion camion : listaCamiones) {
+            try {
+                RegistroEstacionamiento.cerrarEstacionaminet(camion);
+                break;
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+       }
+        
+    }//GEN-LAST:event_btnCerrarEstacionamientoActionPerformed
     private void generarRegistro(){
         new RegistroEstacionamiento();
     }
@@ -185,6 +247,7 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarEstacionamiento;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnListar;

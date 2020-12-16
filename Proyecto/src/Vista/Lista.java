@@ -50,7 +50,7 @@ public class Lista extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnVolver = new javax.swing.JButton();
-        btnGenerarLista = new javax.swing.JButton();
+        btnFiltrarPatente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnListarTodos = new javax.swing.JButton();
 
@@ -107,10 +107,10 @@ public class Lista extends javax.swing.JFrame {
             }
         });
 
-        btnGenerarLista.setText("Filtrar Patente");
-        btnGenerarLista.addActionListener(new java.awt.event.ActionListener() {
+        btnFiltrarPatente.setText("Filtrar Patente");
+        btnFiltrarPatente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarListaActionPerformed(evt);
+                btnFiltrarPatenteActionPerformed(evt);
             }
         });
 
@@ -149,7 +149,7 @@ public class Lista extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addComponent(btnListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGenerarLista)))
+                        .addComponent(btnFiltrarPatente)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -166,7 +166,7 @@ public class Lista extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGenerarLista)
+                    .addComponent(btnFiltrarPatente)
                     .addComponent(btnVolver)
                     .addComponent(btnListarTodos))
                 .addContainerGap())
@@ -194,9 +194,9 @@ public class Lista extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtBuscarPatenteKeyTyped
 
-    private void btnGenerarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarListaActionPerformed
+    private void btnFiltrarPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarPatenteActionPerformed
         Pattern pat = Pattern.compile("[A-Z]{2}[1-9]{1}[0-9]{3}");
-        Pattern pat2 = Pattern.compile("[B-Z]{4}[0-9]{2}");
+        Pattern pat2 = Pattern.compile("[A-Z]{4}[0-9]{2}");
         Matcher mat = pat.matcher(txtBuscarPatente.getText().toUpperCase());
         Matcher mat2 = pat2.matcher(txtBuscarPatente.getText().toUpperCase());
         if (mat.find() || mat2.find()) {
@@ -222,7 +222,7 @@ public class Lista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Formato incorrecto o \nVehiculo no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
             txtBuscarPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
         }
-    }//GEN-LAST:event_btnGenerarListaActionPerformed
+    }//GEN-LAST:event_btnFiltrarPatenteActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         this.setVisible(false);
@@ -276,7 +276,7 @@ public class Lista extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGenerarLista;
+    private javax.swing.JButton btnFiltrarPatente;
     private javax.swing.JButton btnListarTodos;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;

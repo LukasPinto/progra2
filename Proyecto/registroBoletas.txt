@@ -1,0 +1,9 @@
+Patente: ssss12 marca: a modeloa
+hora de entrada: Wed Dec 16 00:30:28 CLST 2020
+hora de salida: Thu Jan 14 23:59:59 CLST 2021
+Tiempo de estadia: 23h 29m
+Valor hora: 2000
+Valor horas totales : 46000
+Iva                 : 8740
+Descuento           : 50360 (0.02x46)
+A pagar             : 4380

@@ -301,7 +301,7 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Pattern pat = Pattern.compile("[A-Z]{2}[1-9]{1}[0-9]{3}");
-        Pattern pat2 = Pattern.compile("[B-Z]{4}[0-9]{2}");
+        Pattern pat2 = Pattern.compile("[A-Z]{4}[0-9]{2}");
         Matcher mat = pat.matcher(txtPatente.getText().toUpperCase());
         Matcher mat2 = pat2.matcher(txtPatente.getText().toUpperCase());
         String patente = txtPatente.getText();
@@ -325,6 +325,7 @@ public class Ingreso extends javax.swing.JFrame {
                 } else if (optTrabajadorSi.isSelected()) {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarAutoCamioneta(auto);
+                    System.out.println("Ingresado");
                 }
             } else if (optCamioneta.isSelected()) {
                 if (optTrabajadorNo.isSelected()) {
