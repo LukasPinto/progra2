@@ -322,9 +322,10 @@ public class Ingreso extends javax.swing.JFrame {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, false);
                     RegistroEstacionamiento.ingresarAutoCamioneta(auto);
                     LimpiarIngreso();
-                } else if (optTrabajadorSi.isSelected()) {
+                } else {
                     Auto auto = new Auto(carroceria, patente, marca, modelo, true);
                     RegistroEstacionamiento.ingresarAutoCamioneta(auto);
+                    System.out.println("holaa");
                     LimpiarIngreso();
                 }
             } else if (optCamioneta.isSelected()) {

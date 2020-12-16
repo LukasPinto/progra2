@@ -66,10 +66,6 @@ public class RegistroEstacionamiento {
         return false;
     }
 
-    public static boolean ingresarAutoCamioneta(Vehiculo vehiculo) {
-        return listaAutosCamionetas.add(vehiculo);
-    }
-
     public static boolean ingresarAutoCamioneta(Auto auto) {
         return listaAutosCamionetas.add(auto);
     }
@@ -87,32 +83,41 @@ public class RegistroEstacionamiento {
     }
 
     public static boolean retirarAutoCamioneta(Vehiculo vehiculo) {
-        int index = 0;
+        int index = -1;
         for (Vehiculo listaCamione : listaAutosCamionetas) {
             if (vehiculo.patente == null ? listaCamione.patente == null : vehiculo.patente.equals(listaCamione.patente)) {
                 index = listaAutosCamionetas.indexOf(listaCamione);
             }
         }
+        if(index==-1){
+            return false;
+        }
         return listaAutosCamionetas.remove(listaAutosCamionetas.get(index));
     }
 
     public static boolean retirarCamion(Camion camion) {
-        int index = 0;
-        
+        int index = -1;
+
         for (Camion listaCamione : listaCamiones) {
             if (camion.patente == null ? listaCamione.patente == null : camion.patente.equals(listaCamione.patente)) {
                 index = listaCamiones.indexOf(listaCamione);
             }
         }
+         if(index==-1){
+            return false;
+        }
         return listaCamiones.remove(listaCamiones.get(index));
     }
 
     public static boolean retirarMoto(Moto moto) {
-        int index = 0;
+        int index = -1;
         for (Moto listaMoto : listaMotos) {
             if (moto.patente == null ? listaMoto.patente == null : moto.patente.equals(listaMoto.patente)) {
                 index = listaMotos.indexOf(listaMoto);
             }
+        }
+         if(index==-1){
+            return false;
         }
         return listaMotos.remove(listaMotos.get(index));
     }
@@ -189,23 +194,15 @@ public class RegistroEstacionamiento {
 
             BoletaArchivo = "Patente: " + listaAutosCamionetas.get(index).patente + " marca: " + listaAutosCamionetas.get(index).Marca + " modelo" + listaAutosCamionetas.get(index).modelo + "\nhora de entrada: " + listaAutosCamionetas.get(index).horaIngreso + "\nhora de salida: " + listaAutosCamionetas.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_AUTO + "\nValor horas totales : " + listaAutosCamionetas.get(index).calcularPrecio(horasContabilizadas) + "\nvehiculo perteneciente a trabjador";
 
-            n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
-            retirarAutoCamioneta(vehiculo);
         } else {
-            if (vehiculo instanceof Auto) {
-                BoletaArchivo = "Patente: " + listaAutosCamionetas.get(index).patente + " marca: " + listaAutosCamionetas.get(index).Marca + " modelo" + listaAutosCamionetas.get(index).modelo + "\nhora de entrada: " + listaAutosCamionetas.get(index).horaIngreso + "\nhora de salida: " + listaAutosCamionetas.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_AUTO + "\nValor horas totales : " + listaAutosCamionetas.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaAutosCamionetas.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaAutosCamionetas.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaAutosCamionetas.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
 
-                n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
-            } else {
-                BoletaArchivo = "Patente: " + listaAutosCamionetas.get(index).patente + " marca: " + listaAutosCamionetas.get(index).Marca + " modelo" + listaAutosCamionetas.get(index).modelo + "\nhora de entrada: " + listaAutosCamionetas.get(index).horaIngreso + "\nhora de salida: " + listaAutosCamionetas.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_CAMIONETA + "\nValor horas totales : " + listaAutosCamionetas.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaAutosCamionetas.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaAutosCamionetas.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaAutosCamionetas.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
-
-                n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
-
-            }
-            retirarAutoCamioneta(vehiculo);
-            cantBoletasAutosCamionetas = cantBoletasAutosCamionetas + 1;
+            BoletaArchivo = "Patente: " + listaAutosCamionetas.get(index).patente + " marca: " + listaAutosCamionetas.get(index).Marca + " modelo" + listaAutosCamionetas.get(index).modelo + "\nhora de entrada: " + listaAutosCamionetas.get(index).horaIngreso + "\nhora de salida: " + listaAutosCamionetas.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_AUTO + "\nValor horas totales : " + listaAutosCamionetas.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaAutosCamionetas.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaAutosCamionetas.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaAutosCamionetas.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
 
         }
+        n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
+
+        retirarAutoCamioneta(vehiculo);
+        cantBoletasAutosCamionetas = cantBoletasAutosCamionetas + 1;
         return true;
     }
 
@@ -231,6 +228,7 @@ public class RegistroEstacionamiento {
         int minutosTotales = horas * 60 + minutos;
         minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
+
         String BoletaArchivo = "Patente: " + listaCamiones.get(index).patente + " marca: " + listaCamiones.get(index).Marca + " modelo" + listaCamiones.get(index).modelo + "\nhora de entrada: " + listaCamiones.get(index).horaIngreso + "\nhora de salida: " + listaCamiones.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_CAMION + "\nValor horas totales : " + listaCamiones.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaCamiones.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaCamiones.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaCamiones.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
         ArchivoEstacionamiento n = new ArchivoEstacionamiento();
         n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
@@ -260,10 +258,10 @@ public class RegistroEstacionamiento {
         int minutosTotales = horas * 60 + minutos;
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
         minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
+
         String BoletaArchivo = "Patente: " + listaMotos.get(index).patente + " marca: " + listaMotos.get(index).Marca + " modelo" + listaMotos.get(index).modelo + "\nhora de entrada: " + listaMotos.get(index).horaIngreso + "\nhora de salida: " + listaMotos.get(index).horaSalida + "\nTiempo de estadia: " + horas + "h " + minutos + "m" + "\nValor hora: " + Caja.VALOR_HORA_MOTO + "\nValor horas totales : " + listaMotos.get(index).calcularPrecio(horasContabilizadas) + "\nIva                 : " + listaMotos.get(index).obtenerIVA(horasContabilizadas) + "\nDescuento           : " + listaMotos.get(index).calcularDescuento(minutosTotales, horasContabilizadas) + " (" + Caja.DESC_MIN + "x" + (int) (horas / 0.5) + ")" + "\nA pagar             : " + listaMotos.get(index).obtenerTotal(minutosTotales, horasContabilizadas);
         ArchivoEstacionamiento n = new ArchivoEstacionamiento();
         n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
-
         retirarMoto(moto);
         cantBoletasMotos = cantBoletasMotos + 1;
         return true;
@@ -428,15 +426,15 @@ public class RegistroEstacionamiento {
             return false;
         }
         Auto aux1 = new Auto("", vehiculo.getPatente(), "", "", true);
-        Camion aux2 = new Camion("", vehiculo.getPatente(),"", "", false);
+        Camion aux2 = new Camion("", vehiculo.getPatente(), "", "", false);
         Moto aux3 = new Moto("", vehiculo.getPatente(), "", "", true);
         if (vehiculo instanceof Auto || vehiculo instanceof Camioneta) {
             RegistroEstacionamiento.generarBoletaAutoCamionetas(aux1);
-            
+
         } else if (vehiculo instanceof Moto) {
-             RegistroEstacionamiento.generarBoletaAutoCamionetas(aux3);
+            RegistroEstacionamiento.generarBoletaAutoCamionetas(aux3);
         } else if (vehiculo instanceof Camion) {
-             RegistroEstacionamiento.generarBoletaAutoCamionetas(aux2);
+            RegistroEstacionamiento.generarBoletaAutoCamionetas(aux2);
         }
         return true;
 

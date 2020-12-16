@@ -1,27 +1,9 @@
-Patente: ssss12 marca: a modeloa
-hora de entrada: Wed Dec 16 00:30:28 CLST 2020
+Patente: jaja12 marca:  modelo
+hora de entrada: Wed Dec 16 01:53:16 CLST 2020
 hora de salida: Thu Jan 14 23:59:59 CLST 2021
-Tiempo de estadia: 23h 29m
+Tiempo de estadia: 22h 6m
 Valor hora: 2000
-Valor horas totales : 46000
-Iva                 : 8740
-Descuento           : 50360 (0.02x46)
-A pagar             : 4380
-Patente: aabb12 marca: a modeloa
-hora de entrada: Wed Dec 16 00:43:52 CLST 2020
-hora de salida: Thu Jan 14 23:59:59 CLST 2021
-Tiempo de estadia: 23h 15m
-Valor hora: 2000
-Valor horas totales : 46000
-Iva                 : 8740
-Descuento           : 50360 (0.02x46)
-A pagar             : 4380
-Patente: sddf32 marca: fdsdf modelosdfsdf
-hora de entrada: Wed Dec 16 00:48:37 CLST 2020
-hora de salida: Thu Jan 14 23:59:59 CLST 2021
-Tiempo de estadia: 23h 10m
-Valor hora: 2000
-Valor horas totales : 48300
-Iva                 : 9177
-Descuento           : 52878 (0.02x46)
-A pagar             : 4599
+Valor horas totales : 42000
+Iva                 : 7980
+Descuento           : 42982 (0.02x44)
+A pagar             : 6998

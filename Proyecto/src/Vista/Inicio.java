@@ -169,38 +169,67 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnCerrarEstacionamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarEstacionamientoActionPerformed
         List<Vehiculo> listaAutosCamionetas = RegistroEstacionamiento.getListaAutosCamiones();
+        
         List<Camion> listaCamiones=RegistroEstacionamiento.getListaCamiones();
         List<Moto> listaMotos=RegistroEstacionamiento.getListaMotos();
-        if(!listaAutosCamionetas.isEmpty()){
-            for (Vehiculo vehiculo : listaAutosCamionetas) {
+        System.out.println(listaMotos.size());
+        while(listaAutosCamionetas.size()>0){
+            Vehiculo vehiculo=listaAutosCamionetas.get(0);            
             try {
-                RegistroEstacionamiento.cerrarEstacionaminet(vehiculo);
-                break;
+                RegistroEstacionamiento.generarBoletaAutoCamionetas(vehiculo);
+                listaAutosCamionetas.remove(listaAutosCamionetas.get(0));
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        while(listaMotos.size()>0){
+            Moto moto=listaMotos.get(0);
+            try {
+                RegistroEstacionamiento.generarBoletaMotos(moto);
             } catch (IOException ex) {
                 Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        }
-        else if(!listaMotos.isEmpty()){
-             for (Moto moto : listaMotos) {
+        while(listaCamiones.size()>0){
+        Camion camion=listaCamiones.get(0);
             try {
-                RegistroEstacionamiento.cerrarEstacionaminet(moto);
-                break;
+                RegistroEstacionamiento.generarBoletaCamion(camion);
             } catch (IOException ex) {
                 Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
             }
+        
         }
-        }
-        else if(!listaCamiones.isEmpty()){
-           for (Camion camion : listaCamiones) {
-            try {
-                RegistroEstacionamiento.cerrarEstacionaminet(camion);
-                break;
-            } catch (IOException ex) {
-                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-       }
+//        if(!listaAutosCamionetas.isEmpty()){
+//            for (Vehiculo vehiculo : listaAutosCamionetas) {
+//            try {
+//                RegistroEstacionamiento.cerrarEstacionaminet(vehiculo);
+//               
+//            } catch (IOException ex) {
+//                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        }
+//        if(!listaMotos.isEmpty()){
+//             for (Moto moto : listaMotos) {
+//            try {
+//                RegistroEstacionamiento.cerrarEstacionaminet(moto);
+//                break;
+//            } catch (IOException ex) {
+//                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        }
+//        else if(!listaCamiones.isEmpty()){
+//           for (Camion camion : listaCamiones) {
+//            try {
+//                RegistroEstacionamiento.cerrarEstacionaminet(camion);
+//                break;
+//            } catch (IOException ex) {
+//                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//       }
         
     }//GEN-LAST:event_btnCerrarEstacionamientoActionPerformed
     private void generarRegistro(){
