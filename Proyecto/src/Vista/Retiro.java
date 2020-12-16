@@ -49,14 +49,7 @@ public class Retiro extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         lblIngresar = new javax.swing.JLabel();
         txtPatente = new javax.swing.JTextField();
-        lblMarca = new javax.swing.JLabel();
-        txtMarca = new javax.swing.JTextField();
-        lblModelo = new javax.swing.JLabel();
-        txtModelo = new javax.swing.JTextField();
-        lblCarroceria = new javax.swing.JLabel();
-        txtCarroceria = new javax.swing.JTextField();
-        optCamioneta = new javax.swing.JRadioButton();
-        optAuto = new javax.swing.JRadioButton();
+        optAutoCamioneta = new javax.swing.JRadioButton();
         optMoto = new javax.swing.JRadioButton();
         optCamion = new javax.swing.JRadioButton();
         btnVolver = new javax.swing.JButton();
@@ -89,59 +82,17 @@ public class Retiro extends javax.swing.JFrame {
             }
         });
 
-        lblMarca.setText("Marca:");
-
-        txtMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMarcaActionPerformed(evt);
-            }
-        });
-        txtMarca.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtMarcaKeyTyped(evt);
-            }
-        });
-
-        lblModelo.setText("Modelo:");
-
-        txtModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModeloActionPerformed(evt);
-            }
-        });
-        txtModelo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtModeloKeyTyped(evt);
-            }
-        });
-
-        lblCarroceria.setText("Carroceria");
-
-        txtCarroceria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCarroceriaActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(optCamioneta);
-        optCamioneta.setText("Camioneta");
-        optCamioneta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optCamionetaActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(optAuto);
-        optAuto.setSelected(true);
-        optAuto.setText("Auto");
-        optAuto.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonGroup1.add(optAutoCamioneta);
+        optAutoCamioneta.setSelected(true);
+        optAutoCamioneta.setText("Auto/Camioneta");
+        optAutoCamioneta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                optAutoMouseClicked(evt);
+                optAutoCamionetaMouseClicked(evt);
             }
         });
-        optAuto.addActionListener(new java.awt.event.ActionListener() {
+        optAutoCamioneta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optAutoActionPerformed(evt);
+                optAutoCamionetaActionPerformed(evt);
             }
         });
 
@@ -213,28 +164,6 @@ public class Retiro extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(lblIngresar)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblMarca)
-                                    .addComponent(lblModelo)
-                                    .addComponent(lblCarroceria))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                                        .addComponent(txtModelo))
-                                    .addComponent(txtCarroceria, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -242,54 +171,48 @@ public class Retiro extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnRetirar))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblTrabajador)
-                                    .addComponent(optCamioneta))
-                                .addGap(27, 27, 27)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(optAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(optMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(optCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(28, 28, 28)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblTrabajador)
+                                            .addComponent(lblIngresar))
+                                        .addGap(50, 50, 50)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(optTrabajadorSi)
+                                                .addGap(39, 39, 39)
+                                                .addComponent(optTrabajadorNo))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(optTrabajadorSi)
-                                        .addGap(39, 39, 39)
-                                        .addComponent(optTrabajadorNo)))
-                                .addGap(0, 55, Short.MAX_VALUE)))))
+                                        .addComponent(optAutoCamioneta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(46, 46, 46)
+                                        .addComponent(optMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(55, 55, 55)
+                                        .addComponent(optCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 60, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIngresar)
                     .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblMarca)
-                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblModelo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCarroceria)
-                    .addComponent(txtCarroceria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(optCamioneta)
-                    .addComponent(optAuto)
+                    .addComponent(optAutoCamioneta)
                     .addComponent(optMoto)
                     .addComponent(optCamion))
                 .addGap(18, 18, 18)
                 .addComponent(lblTrabajador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(optTrabajadorNo)
                     .addComponent(optTrabajadorSi))
@@ -308,9 +231,7 @@ public class Retiro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -328,30 +249,18 @@ public class Retiro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtPatenteKeyTyped
 
-    private void txtMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMarcaKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarcaKeyTyped
-
-    private void txtModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModeloKeyTyped
-
-    private void optCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCamionetaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_optCamionetaActionPerformed
-
-    private void optAutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoMouseClicked
-        optAuto.setSelected(true);
+    private void optAutoCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optAutoCamionetaMouseClicked
+        optAutoCamioneta.setSelected(true);
         optMoto.setSelected(false);
         optCamion.setSelected(false);
-    }//GEN-LAST:event_optAutoMouseClicked
+    }//GEN-LAST:event_optAutoCamionetaMouseClicked
 
-    private void optAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optAutoActionPerformed
+    private void optAutoCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optAutoCamionetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_optAutoActionPerformed
+    }//GEN-LAST:event_optAutoCamionetaActionPerformed
 
     private void optMotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optMotoMouseClicked
-        optAuto.setSelected(false);
+        optAutoCamioneta.setSelected(false);
         optMoto.setSelected(true);
         optCamion.setSelected(false);
     }//GEN-LAST:event_optMotoMouseClicked
@@ -360,23 +269,11 @@ public class Retiro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_optMotoActionPerformed
 
-    private void txtCarroceriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarroceriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCarroceriaActionPerformed
-
     private void optCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optCamionMouseClicked
-        optAuto.setSelected(false);
+        optAutoCamioneta.setSelected(false);
         optMoto.setSelected(false);
         optCamion.setSelected(true);
     }//GEN-LAST:event_optCamionMouseClicked
-
-    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarcaActionPerformed
-
-    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModeloActionPerformed
 
     private void optCamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCamionActionPerformed
         // TODO add your handling code here:
@@ -393,104 +290,68 @@ public class Retiro extends javax.swing.JFrame {
         Matcher mat = pat.matcher(txtPatente.getText().toUpperCase());
         Matcher mat2 = pat2.matcher(txtPatente.getText().toUpperCase());
         String patente = txtPatente.getText();
-        String marca = txtMarca.getText();
-        String modelo = txtModelo.getText();
-        String carroceria = txtCarroceria.getText();
-        if ((mat.find() || mat2.find()) && patente != "" && marca != "" && modelo != "" && carroceria != "") {
-            Auto aux1=new Auto(carroceria, patente, marca, modelo, true);
-            Camion aux2=new Camion(carroceria, patente, marca, modelo, false);
-            Moto aux3 = new Moto(carroceria, patente, marca, modelo, true);
-            if(!(RegistroEstacionamiento.validarAutoCamioneta(aux1) || RegistroEstacionamiento.validarMoto(aux3) || RegistroEstacionamiento.validarCamion(aux2))){
-                JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
-            }
-            else if (optAuto.isSelected()) {
-                if (optTrabajadorNo.isSelected()) {
-                    Auto auto = new Auto(carroceria, patente, marca, modelo, false);
-                    try {
-                        //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
-
-                        RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    Auto auto = new Auto(carroceria, patente, marca, modelo, true);
-
-                    try {
-                        //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
-
-                        RegistroEstacionamiento.generarBoletaAutoCamionetas(auto);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    if (RegistroEstacionamiento.retirarAutoCamioneta(auto)) {
-                        System.out.println("Retirado");
-                    }
-                }
-            } else if (optCamioneta.isSelected()) {
-                if (optTrabajadorNo.isSelected()) {
-                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaAutoCamionetas(camioneta);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-
-                } else {
-                    Camioneta camioneta = new Camioneta(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaAutoCamionetas(camioneta);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            } else if (optMoto.isSelected()) {
-                if (optTrabajadorNo.isSelected()) {
-                    Moto moto = new Moto(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaMotos(moto);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    Moto moto = new Moto(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaMotos(moto);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            } else if (optCamion.isSelected()) {
-                if (optTrabajadorNo.isSelected()) {
-                    Camion camion = new Camion(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaCamion(camion);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    Camion camion = new Camion(carroceria, patente, marca, modelo, false);
-                    try {
-                        RegistroEstacionamiento.generarBoletaCamion(camion);
-                        System.out.println("Hola");
-                    } catch (IOException ex) {
-                        Logger.getLogger(Retiro.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-
-                }
-            }
-
-        } else {
+        
+        if (!(mat.find() || mat2.find()) || patente == "") {
             JOptionPane.showMessageDialog(this, "Complete los campos necesarios.\nrevise el formato de la patente", "Advertencia", JOptionPane.WARNING_MESSAGE);
             txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+
+        } else {
+            Vehiculo vehiculo = RegistroEstacionamiento.filtrarPatente(patente);
+            Auto aux1 = new Auto("", patente, "", "", true);
+            Camion aux2 = new Camion("", patente, "", "", false);
+            Moto aux3 = new Moto("", patente, "","", true);
+            boolean registro;
+            if (!(RegistroEstacionamiento.validarAutoCamioneta(aux1) || RegistroEstacionamiento.validarMoto(aux3) || RegistroEstacionamiento.validarCamion(aux2))) {
+                JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                txtPatente.setBorder(BorderFactory.createBevelBorder(WIDTH, Color.RED, Color.RED, Color.RED, Color.RED));
+            } else if (optAutoCamioneta.isSelected()) {
+                    Auto auto = new Auto("", patente, "", "", false);
+                    try {
+                        //System.out.println(RegistroEstacionamiento.retirarAutoCamioneta(auto));
+
+                        registro=RegistroEstacionamiento.generarBoletaAutoCamionetas(vehiculo);
+                        if(registro){
+                            System.out.println("Retirado");
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    }
+        
+            }  else if (optMoto.isSelected()) {
+                    Moto moto = new Moto("", patente, "", "", false);
+                    try {
+                        registro=RegistroEstacionamiento.generarBoletaMotos(moto);
+                        if(registro){
+                            System.out.println("Retirado");
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    }
+                
+            } else if (optCamion.isSelected()) {
+                    Camion camion = new Camion("", patente, "", "", false);
+                    try {
+                        registro=RegistroEstacionamiento.generarBoletaCamion(camion);
+                        if(registro){
+                            System.out.println("Retirado");
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    }
+            
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Este vehiculo no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
 
         }
     }//GEN-LAST:event_btnRetirarActionPerformed
@@ -506,21 +367,14 @@ public class Retiro extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblCarroceria;
     private javax.swing.JLabel lblIngresar;
-    private javax.swing.JLabel lblMarca;
-    private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTrabajador;
-    private javax.swing.JRadioButton optAuto;
+    private javax.swing.JRadioButton optAutoCamioneta;
     private javax.swing.JRadioButton optCamion;
-    private javax.swing.JRadioButton optCamioneta;
     private javax.swing.JRadioButton optMoto;
     private javax.swing.JRadioButton optTrabajadorNo;
     private javax.swing.JRadioButton optTrabajadorSi;
-    private javax.swing.JTextField txtCarroceria;
-    private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtPatente;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,11 +12,13 @@ import Modelo.Camioneta;
 import Modelo.Moto;
 import Modelo.Vehiculo;
 import java.io.IOException;
+import java.rmi.NoSuchObjectException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import javax.imageio.IIOException;
 
 /**
  *
@@ -159,17 +161,19 @@ public class RegistroEstacionamiento {
         RegistroEstacionamiento.listaAutosCamionetas.clear();
     }
 
-    public static void generarBoletaAutoCamionetas(Vehiculo vehiculo) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+    public static boolean generarBoletaAutoCamionetas(Vehiculo vehiculo) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        int index = 0;
+        int index = -1;
         for (Vehiculo vehiculo1 : listaAutosCamionetas) {
             if (vehiculo.patente == vehiculo1.patente) {
                 index = listaAutosCamionetas.indexOf(vehiculo1);
             }
         }
+         if(index==-1){
+            return false;
+        }
         vehiculo.setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
         listaAutosCamionetas.get(index).setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
-
         Calendar a = getCalendar(vehiculo.getHoraIngreso());
         Calendar b = getCalendar(vehiculo.getHoraSalida());
         int horas = (b.get(Calendar.HOUR_OF_DAY) - a.get(Calendar.HOUR_OF_DAY));
@@ -177,9 +181,7 @@ public class RegistroEstacionamiento {
         int minutosTotales = horas * 60 + minutos;
         ArchivoEstacionamiento n = new ArchivoEstacionamiento();
         String BoletaArchivo;
-
         minutosTotales = minutosTotales - 10;// se descuentas los primeros 10 min gratis
-
         horasContabilizadas = (int) (minutosTotales / 60);// Se toman en cuenta las exactas que estuvo para el calculo
         if (listaAutosCamionetas.get(index).trabajador) {
 
@@ -202,17 +204,21 @@ public class RegistroEstacionamiento {
             cantBoletasAutosCamionetas = cantBoletasAutosCamionetas + 1;
 
         }
-
+        return true;
     }
 
-    public static void generarBoletaCamion(Camion camion) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+    public static boolean generarBoletaCamion(Camion camion) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        int index = 0;
+        int index = -1;
         for (Camion camion1 : listaCamiones) {
             if (camion.patente == camion1.patente) {
                 index = listaCamiones.indexOf(camion1);
             }
         }
+        if(index==-1){
+            return false;
+        }
+        
         
         listaCamiones.get(index).setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
         camion.setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
@@ -229,16 +235,19 @@ public class RegistroEstacionamiento {
         n.registrarBoletas("registroBoletas.txt", BoletaArchivo);
         retirarCamion(camion);
         cantBoletasCamiones = cantBoletasCamiones + 1;
-
+        return false;
     }
 
-    public static void generarBoletaMotos(Moto moto) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
+    public static boolean generarBoletaMotos(Moto moto) throws IOException {// se recibe el vehiculo, para sacarlo del sistema y generar la boleta
         int horasContabilizadas;
-        int index = 0;
+        int index = -1;
         for (Moto moto1 : listaMotos) {
             if (moto1.patente == moto.patente) {
-                index = listaCamiones.indexOf(moto1);
+                index = listaMotos.indexOf(moto1);
             }
+        }
+        if(index==-1){
+           return false;
         }
         
         listaMotos.get(index).setHoraSalida(new Date(120, 12, 14, 23, 59, 59));
@@ -256,6 +265,7 @@ public class RegistroEstacionamiento {
 
         retirarMoto(moto);
         cantBoletasMotos = cantBoletasMotos + 1;
+        return true;
     }
 
     public static void cerrarEstacionamineto(Vehiculo vehiculo) throws IOException {
